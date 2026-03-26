@@ -526,11 +526,13 @@ h2{
     min-height:0;
     padding:96px 16px 18px;
     gap:14px;
+    justify-content:flex-start;
     overflow-y:auto;
     overflow-x:hidden;
     touch-action:pan-y;
     -webkit-overflow-scrolling:touch
   }
+  .inner.cover{align-items:flex-start;text-align:left}
   .eyebrow{font-size:10px;letter-spacing:.18em;gap:8px}
   .eyebrow::before{width:18px}
   h1{font-size:30px;line-height:1.14}
@@ -1512,21 +1514,11 @@ document.getElementById('fsBtn').addEventListener('click', async () => {
 
 let touchX = null;
 let touchY = null;
-let touchScrollTop = 0;
-let touchScrollMax = 0;
 
 document.addEventListener('touchstart', e => {
   const t = e.changedTouches[0];
   touchX = t.clientX;
   touchY = t.clientY;
-  const activeInner = slides[cur]?.querySelector('.inner');
-  if(activeInner){
-    touchScrollTop = activeInner.scrollTop;
-    touchScrollMax = activeInner.scrollHeight - activeInner.clientHeight;
-  }else{
-    touchScrollTop = 0;
-    touchScrollMax = 0;
-  }
 }, {passive:true});
 
 document.addEventListener('touchend', e => {
@@ -1537,9 +1529,12 @@ document.addEventListener('touchend', e => {
   const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
   if(isMobile){
+    const activeInner = slides[cur]?.querySelector('.inner');
+    const currentScrollTop = activeInner ? activeInner.scrollTop : 0;
+    const currentScrollMax = activeInner ? (activeInner.scrollHeight - activeInner.clientHeight) : 0;
     if(Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 48){
-      if(dy < 0 && touchScrollTop >= touchScrollMax - 4) go(1);
-      if(dy > 0 && touchScrollTop <= 4) go(-1);
+      if(dy < 0 && currentScrollTop >= currentScrollMax - 4) go(1);
+      if(dy > 0 && currentScrollTop <= 4) go(-1);
     }
   }else{
     if(Math.abs(dx) > 40){ dx < 0 ? go(1) : go(-1); }
@@ -1547,8 +1542,6 @@ document.addEventListener('touchend', e => {
 
   touchX = null;
   touchY = null;
-  touchScrollTop = 0;
-  touchScrollMax = 0;
 }, {passive:true});
 
 counter.textContent = `1 / ${slides.length}`;
