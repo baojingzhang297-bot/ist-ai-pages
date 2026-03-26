@@ -497,6 +497,80 @@ h2{
   h1{font-size:40px}
   h2{font-size:28px}
 }
+@media (max-width: 640px){
+  html,body{overflow:hidden}
+  #app{height:100dvh}
+  #topbar{
+    height:auto;min-height:56px;padding:10px 12px;gap:8px;
+    align-items:flex-start;flex-wrap:wrap
+  }
+  .logo{width:100%;min-width:0;font-size:11px;letter-spacing:.14em}
+  .chapters{
+    order:3;flex:0 0 100%;overflow-x:auto;overflow-y:hidden;
+    padding-bottom:2px;-webkit-overflow-scrolling:touch
+  }
+  .counter,.fs-btn{margin-left:auto}
+  .chapter-btn{padding:7px 10px;font-size:11px}
+  #stage{
+    height:calc(100dvh - 92px);
+    overflow:hidden;
+    touch-action:pan-y
+  }
+  .slide{
+    height:100%;
+    min-height:0
+  }
+  .inner{
+    height:100%;
+    max-height:100%;
+    min-height:0;
+    padding:96px 16px 18px;
+    gap:14px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    touch-action:pan-y;
+    -webkit-overflow-scrolling:touch
+  }
+  .eyebrow{font-size:10px;letter-spacing:.18em;gap:8px}
+  .eyebrow::before{width:18px}
+  h1{font-size:30px;line-height:1.14}
+  h2{font-size:22px;line-height:1.2}
+  h3{font-size:16px;line-height:1.35}
+  .sub,.card p,.service-card p,.panel p,.mini-list li,.bullet-list li,.matrix-note,.footnote,.impact p,.coverage-card li,.talent-points li,.spectrum-note,.compare-box li{
+    font-size:13px;line-height:1.55
+  }
+  .metric-row,.grid-4,.grid-3,.service-map,.case-stack,.coverage-shell,.flow,.roadmap,.big-grid,.split,.split-even,.compare,.profile-columns,.profile-page-top,.profile-kpis,.talent-layout{
+    grid-template-columns:1fr !important
+  }
+  .stat-strip.hero-stat-grid{grid-template-columns:1fr}
+  .hero-stat-grid .stat{min-height:auto;padding:12px 12px 10px}
+  .metric-card,.card,.service-card,.panel,.case-card,.coverage-card,.profile-page,.talent-panel,.spectrum,.road-step,.flow-step{padding:14px}
+  .profile-page{gap:8px}
+  .profile-title-wrap{gap:10px}
+  .profile-avatar{width:58px;height:58px;border-radius:18px;font-size:20px}
+  .profile-identity h3{font-size:22px}
+  .profile-identity .role{font-size:13px}
+  .profile-summary-main{font-size:12px;line-height:1.55}
+  .profile-card li,.profile-list li{font-size:12px;line-height:1.5}
+  .profile-tags-grid span,.profile-tags span{font-size:10px;padding:5px 7px}
+  .matrix{
+    grid-template-columns:1fr !important;
+    gap:8px
+  }
+  .matrix-head,.matrix-side,.matrix-cell{
+    min-height:auto;
+    justify-content:flex-start;
+    text-align:left;
+    padding:12px 14px
+  }
+  .spectrum-head,.spectrum-row{
+    grid-template-columns:92px repeat(5,minmax(0,1fr));
+    gap:6px
+  }
+  .spectrum-cell{height:34px;border-radius:10px}
+  .flow-step::after,.road-step::after{display:none}
+  .footer-note{font-size:10px;gap:10px;flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
