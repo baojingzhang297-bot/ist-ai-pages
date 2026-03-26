@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コアメンバープロフィール — 曲 帥</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap');
+
+  :root {
+    --bcg-green: #0e6b57;
+    --bcg-green-dark: #094a3c;
+    --bcg-green-light: #1a9e70;
+    --bcg-accent: #2ec4b6;
+    --ink: #162024;
+    --ink-sec: #3d4a50;
+    --muted: #6b7980;
+    --line: #d4ddd8;
+    --bg-subtle: #f5f8f6;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: #ddd9d4;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 1200px;
+    min-height: 800px;
+    background: var(--white);
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    display: grid;
+    grid-template-columns: 264px 1fr;
+  }
+
+  /* ══════════ SIDEBAR ══════════ */
+  .sidebar {
+    background: linear-gradient(175deg, #0a5544 0%, var(--bcg-green) 40%, #0d6050 100%);
+    color: #fff;
+    padding: 26px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.035);
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.025);
+  }
+
+  .photo-frame {
+    width: 82px; height: 82px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    margin: 0 auto 12px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid rgba(255,255,255,0.2);
+    position: relative; z-index: 1;
+  }
+
+  .photo-initials {
+    font-size: 30px; font-weight: 800; color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .name-block { text-align: center; margin-bottom: 2px; position: relative; z-index: 1; }
+  .name-jp { font-size: 20px; font-weight: 800; letter-spacing: 3px; }
+  .name-en {
+    font-family: 'DM Sans'; font-size: 10px;
+    color: rgba(255,255,255,0.5); letter-spacing: 2px;
+    text-transform: uppercase; margin-top: 2px;
+  }
+
+  .role-line {
+    text-align: center; font-size: 11px; font-weight: 500;
+    color: rgba(255,255,255,0.88); letter-spacing: 0.5px;
+    padding: 10px 0 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 14px; position: relative; z-index: 1;
+    line-height: 1.7;
+  }
+
+  .sb-title {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 6px;
+  }
+
+  .sb-section { margin-bottom: 12px; position: relative; z-index: 1; }
+
+  .cert-row {
+    display: flex; gap: 6px; margin-bottom: 3px;
+    font-size: 10px; line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+  }
+  .cert-row.featured {
+    background: rgba(46,196,182,0.12);
+    border: 1px solid rgba(46,196,182,0.25);
+    border-radius: 3px;
+    padding: 5px 7px;
+    margin-bottom: 5px;
+    flex-direction: column; gap: 1px;
+  }
+  .cert-row.featured .cert-main {
+    display: flex; gap: 6px; font-weight: 600; font-size: 10px;
+    color: #fff;
+  }
+  .cert-issuer {
+    font-size: 8.5px; color: rgba(255,255,255,0.55);
+    padding-left: 10px; line-height: 1.4;
+    letter-spacing: 0.3px;
+  }
+  .cert-dot {
+    width: 4px; height: 4px; min-width: 4px;
+    border-radius: 50%; background: var(--bcg-accent);
+    margin-top: 5px;
+  }
+
+  .tag-wrap { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag {
+    font-size: 9px; padding: 2px 6px; border-radius: 2px;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.85);
+  }
+  .tag.primary {
+    background: rgba(46,196,182,0.22); color: #fff; font-weight: 600;
+  }
+
+  .patent-item {
+    display: flex; gap: 6px; margin-bottom: 3px;
+    font-size: 9px; line-height: 1.5;
+    color: rgba(255,255,255,0.78);
+  }
+  .patent-num {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 700;
+    color: var(--bcg-accent); min-width: 14px;
+    margin-top: 1px;
+  }
+
+  .sb-value-section {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    position: relative; z-index: 1;
+  }
+
+  .sb-value-item {
+    display: flex; gap: 6px; margin-bottom: 4px;
+    font-size: 9.5px; line-height: 1.55;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .sb-footer {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 8px; color: rgba(255,255,255,0.35); line-height: 1.6;
+    position: relative; z-index: 1;
+  }
+
+  /* ══════════ MAIN ══════════ */
+  .main {
+    padding: 22px 30px 16px 26px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 10px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--bcg-green);
+  }
+  .h-tag {
+    font-family: 'DM Sans'; font-size: 8.5px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--bcg-green);
+  }
+  .h-title { font-size: 16px; font-weight: 800; letter-spacing: 0.5px; margin-top: 1px; }
+  .header-right {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; color: #bbb; text-transform: uppercase;
+  }
+
+  /* Summary */
+  .summary-block {
+    background: var(--bg-subtle);
+    border-left: 3px solid var(--bcg-green);
+    padding: 10px 14px;
+    border-radius: 0 3px 3px 0;
+    margin-bottom: 10px;
+  }
+  .summary-headline {
+    font-size: 13.5px; font-weight: 800; line-height: 1.5;
+    color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+  .summary-text {
+    font-size: 10.5px; line-height: 1.8; color: var(--ink-sec);
+  }
+  .summary-text strong { color: var(--ink); }
+
+  /* Highlights */
+  .hl-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px; }
+  .hl-card {
+    background: var(--bg-subtle); border-radius: 3px;
+    padding: 8px 10px; position: relative; overflow: hidden;
+  }
+  .hl-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--bcg-green);
+  }
+  .hl-num {
+    font-family: 'DM Sans'; font-size: 22px; font-weight: 800;
+    color: var(--bcg-green); line-height: 1;
+  }
+  .hl-unit { font-size: 11px; font-weight: 400; }
+  .hl-label { font-size: 9px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+
+  /* Section titles */
+  .sec-title {
+    font-size: 11.5px; font-weight: 800; color: var(--ink);
+    margin-bottom: 6px; display: flex; align-items: center; gap: 7px;
+  }
+  .sec-bar { width: 3px; height: 13px; background: var(--bcg-green); border-radius: 2px; }
+
+  /* ══════════ MANAGEMENT STACK ══════════ */
+  .tech-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px;
+    margin-bottom: 10px;
+  }
+  .tech-card {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 8px 10px; position: relative; overflow: hidden;
+  }
+  .tech-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%; background: var(--bcg-green);
+  }
+  .tech-card-title {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--bcg-green); margin-bottom: 4px;
+  }
+  .tech-items {
+    display: flex; flex-wrap: wrap; gap: 3px;
+  }
+  .tech-tag {
+    font-size: 8.5px; padding: 1.5px 5px; border-radius: 2px;
+    background: var(--bg-subtle); color: var(--ink-sec);
+    font-weight: 500; white-space: nowrap;
+  }
+  .tech-tag.highlight {
+    background: rgba(14,107,87,0.08); color: var(--bcg-green); font-weight: 700;
+  }
+
+  /* Project grid */
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 10px; }
+
+  .proj-card {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px; display: flex; flex-direction: column;
+    transition: border-color 0.2s;
+  }
+  .proj-card:hover { border-color: var(--bcg-green); }
+
+  .proj-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; }
+  .proj-title { font-size: 11px; font-weight: 700; }
+  .proj-badge {
+    font-family: 'DM Sans'; font-size: 7.5px; font-weight: 700;
+    letter-spacing: 1px; padding: 1px 6px; border-radius: 2px;
+    background: rgba(14,107,87,0.08); color: var(--bcg-green);
+    text-transform: uppercase; white-space: nowrap;
+  }
+
+  .proj-client { font-size: 9px; color: var(--bcg-green-light); font-weight: 500; margin-bottom: 4px; }
+
+  .proj-bullets { font-size: 9px; line-height: 1.6; color: var(--ink-sec); list-style: none; }
+  .proj-bullets li { position: relative; padding-left: 9px; margin-bottom: 1.5px; }
+  .proj-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--line); }
+
+  .proj-tech {
+    font-size: 8px; color: var(--muted); margin-top: 3px;
+    font-family: 'DM Sans'; letter-spacing: 0.3px;
+  }
+  .proj-tech strong { color: var(--bcg-green); font-weight: 700; }
+
+  /* Bottom section */
+  .bottom-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px; }
+
+  .value-panel {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px;
+  }
+  .value-panel h4 {
+    font-size: 10px; font-weight: 800; color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+
+  .value-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .v-tag {
+    font-size: 9px; font-weight: 600; padding: 3px 7px;
+    border-radius: 999px; background: #e8f3ee;
+    color: var(--bcg-green-dark); border: 1px solid #cce3d8;
+  }
+
+  .value-bullets { padding-left: 14px; }
+  .value-bullets li {
+    font-size: 9px; line-height: 1.7; color: var(--ink-sec);
+    margin-bottom: 2px;
+  }
+
+  .role-panel {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px;
+  }
+  .role-panel h4 {
+    font-size: 10px; font-weight: 800; color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+
+  .role-item { margin-bottom: 5px; }
+  .role-item strong {
+    font-size: 9.5px; display: block; margin-bottom: 1px;
+    color: var(--ink);
+  }
+  .role-item p {
+    font-size: 8.5px; line-height: 1.6; color: var(--muted); margin: 0;
+  }
+
+  /* Footer */
+  .page-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bcg-green-dark), var(--bcg-green), var(--bcg-accent));
+  }
+  .conf {
+    position: absolute; bottom: 10px; right: 30px;
+    font-family: 'DM Sans'; font-size: 7.5px;
+    letter-spacing: 1.5px; color: #c0c0c0; text-transform: uppercase;
+  }
+
+  @media print { body { background: #fff; } .page { box-shadow: none; margin: 0; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════ SIDEBAR ══════════ -->
+  <div class="sidebar">
+    <div class="photo-frame"><span class="photo-initials">曲</span></div>
+    <div class="name-block">
+      <div class="name-jp">曲 帥</div>
+      <div class="name-en">きょく スイ</div>
+    </div>
+    <div class="role-line">AI事業 プロジェクトディレクター</div>
+
+    <div class="sb-section">
+      <div class="sb-title">Language</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>日本語：ビジネスレベル（上級）</span></div>
+        <div class="cert-issuer">日本クライアントとの直接折衝・要件定義の実績多数</div>
+      </div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>英語：ドキュメント読解・作成レベル</span></div>
+        <div class="cert-issuer">技術文書・仕様書の読解・作成が可能</div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Japan Project Experience</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>日本向けプロジェクト経験：20年</span></div>
+        <div class="cert-issuer">2016〜2017年 日本駐在（2年間）</div>
+        <div class="cert-issuer">日本クライアントとの直接折衝・要件定義の実績多数</div>
+      </div>
+      <div class="cert-row"><span class="cert-dot"></span><span>累計1,000人月超のプロジェクト管理実績</span></div>
+      <div class="cert-row"><span class="cert-dot"></span><span>日本大手企業向けプロジェクト統括経験</span></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Certification</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>AI大規模言語モデル 上級R&Dエンジニア</span></div>
+        <div class="cert-issuer">中国工業情報化部（MIIT）認定</div>
+      </div>
+      <div class="cert-row"><span class="cert-dot"></span><span>AI関連 発明特許：2件</span></div>
+      <div class="cert-row"><span class="cert-dot"></span><span>学術論文：期刊発表 4件</span></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Core Competencies</div>
+      <div class="tag-wrap">
+        <span class="tag primary">AIプロジェクト統括</span>
+        <span class="tag primary">大規模PJ管理</span>
+        <span class="tag primary">チームマネジメント</span>
+        <span class="tag primary">要件定義・顧客折衝</span>
+        <span class="tag">LLM / RAG / Agent</span>
+        <span class="tag">ServiceNow</span>
+        <span class="tag">Java / .NET / Python</span>
+        <span class="tag">Oracle / PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="sb-value-section">
+      <div class="sb-title">金融・保険領域での推進力</div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>日本語での直接折衝・提案・報告が可能</span></div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>大規模PJの計画策定・リスク管理・品質統制</span></div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>AI技術×業務理解による業務変革推進</span></div>
+    </div>
+
+    <div class="sb-footer">
+      大連百易軟件株式会社<br>
+      Dalian Presoft Company Limited
+    </div>
+  </div>
+
+  <!-- ══════════ MAIN ══════════ -->
+  <div class="main">
+
+    <div class="header">
+      <div>
+        <div class="h-tag">Core Member Profile</div>
+        <div class="h-title">コアメンバー紹介</div>
+      </div>
+      <div class="header-right">Confidential</div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="summary-block">
+      <div class="summary-headline">日本向けIT領域において20年以上の経験を有する。1,000人月超の大規模案件を統括してきたAIプロジェクトディレクター。</div>
+      <div class="summary-text">
+        <strong>ビジネスレベル（上級）</strong>として日本クライアントとの直接折衝から、要件定義・導入・定着化まで一貫してプロジェクトを統括。
+        <strong>累計1,000人月超規模のプロジェクトマネジメント実績</strong>に加え、MIIT認定<strong>AI大規模言語モデル 上級R&Dエンジニア</strong>資格・発明特許2件・学術論文4件の技術バックグラウンドを有し、
+        <strong>AI技術を活用した業務変革・事業価値創出</strong>の両面からプロジェクトをリードできるディレクター。
+      </div>
+    </div>
+
+    <!-- Highlight Numbers -->
+    <div class="hl-row">
+      <div class="hl-card">
+        <div class="hl-num">20<span class="hl-unit">年</span></div>
+        <div class="hl-label">日本向けプロジェクト<br>経験年数</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">1,000<span class="hl-unit">人月+</span></div>
+        <div class="hl-label">累計マネジメント<br>プロジェクト規模</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">N1</div>
+        <div class="hl-label">日本語対応力<br>顧客折衝・要件定義可</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">2<span class="hl-unit">件</span>+4<span class="hl-unit">篇</span></div>
+        <div class="hl-label">AI発明特許<br>&amp; 学術論文</div>
+      </div>
+    </div>
+
+    <!-- Management & Tech Stack -->
+    <div class="sec-title"><span class="sec-bar"></span>マネジメント領域 &amp; 技術スタック</div>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-card-title">Project Management</div>
+        <div class="tech-items">
+          <span class="tech-tag highlight">大規模PJ統括</span>
+          <span class="tech-tag highlight">顧客折衝</span>
+          <span class="tech-tag">要件定義</span>
+          <span class="tech-tag">チーム構築</span>
+          <span class="tech-tag">品質管理</span>
+          <span class="tech-tag">リスク管理</span>
+        </div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-title">AI &amp; LLM</div>
+        <div class="tech-items">
+          <span class="tech-tag highlight">LLM / 生成AI</span>
+          <span class="tech-tag highlight">RAG</span>
+          <span class="tech-tag highlight">Multi-Agent</span>
+          <span class="tech-tag">Prompt Engineering</span>
+          <span class="tech-tag">OCR / IDP</span>
+          <span class="tech-tag">AI Solution Planning</span>
+        </div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-title">Enterprise IT</div>
+        <div class="tech-items">
+          <span class="tech-tag highlight">ServiceNow</span>
+          <span class="tech-tag highlight">Java / .NET</span>
+          <span class="tech-tag">Oracle / PostgreSQL</span>
+          <span class="tech-tag">ERP / 物流PKG</span>
+          <span class="tech-tag">SaaS</span>
+          <span class="tech-tag">Azure / AWS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Projects as Director -->
+    <div class="sec-title"><span class="sec-bar"></span>AIプロジェクト実績（Director）</div>
+
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">AI文書処理基盤構築（国際物流）</div>
+          <div class="proj-badge">Director</div>
+        </div>
+        <div class="proj-client">2025 — 物流業クライアント ｜ AI / Operations</div>
+        <ul class="proj-bullets">
+          <li>非構造PDF/画像を対象にLLMベースの文書分類・項目抽出基盤の構想策定・推進を統括</li>
+          <li>PoC〜API連携・基幹接続・ユーザー教育まで全フェーズのデリバリー管理を主導</li>
+        </ul>
+        <div class="proj-tech"><strong>Role:</strong> 構想策定 · フェーズ管理 · 品質統括 · 顧客折衝</div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">CBRE マルチAgent不動産分析プラットフォーム</div>
+          <div class="proj-badge">Director</div>
+        </div>
+        <div class="proj-client">CBRE ｜ Multi-Agent System</div>
+        <ul class="proj-bullets">
+          <li>グローバルクライアントとの要件定義・スコープ管理を統括</li>
+          <li>AI開発チーム・業務コンサルの横断連携とデリバリー管理を推進</li>
+        </ul>
+        <div class="proj-tech"><strong>Role:</strong> スコープ管理 · ステークホルダー調整 · デリバリー統括</div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">FAW-Volkswagen GraphRAG知識Q&amp;Aプラットフォーム</div>
+          <div class="proj-badge">Director</div>
+        </div>
+        <div class="proj-client">FAW-Volkswagen ｜ GraphRAG + Knowledge Graph</div>
+        <ul class="proj-bullets">
+          <li>自動車メーカーとの直接折衝・プロジェクト全体の推進管理を担当</li>
+          <li>技術チームの成果物レビュー・品質基準の策定と運用を主導</li>
+        </ul>
+        <div class="proj-tech"><strong>Role:</strong> 顧客折衝 · 進捗管理 · 品質レビュー</div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">保険会社向け AIエージェント基盤構築</div>
+          <div class="proj-badge">Director</div>
+        </div>
+        <div class="proj-client">保険会社クライアント ｜ RAG + AI Agent</div>
+        <ul class="proj-bullets">
+          <li>社内私有知識ベースを活用し、契約者基本情報に基づく最適保険商品のAIレコメンド機能を構築</li>
+          <li>膨大かつ複雑な保険約款に対するAI智能Q&amp;A基盤の構想策定・推進を統括</li>
+        </ul>
+        <div class="proj-tech"><strong>Role:</strong> 構想策定 · 要件定義 · デリバリー統括 · 顧客折衝</div>
+      </div>
+    </div>
+
+    <!-- Bottom: BCG value + Expected role -->
+    <div class="bottom-row" style="grid-template-columns: 1fr;">
+      <div class="value-panel">
+        <h4>対BCG協業での提供価値</h4>
+        <div class="value-tags">
+          <span class="v-tag">日本語上級PM</span>
+          <span class="v-tag">大規模PJ統括</span>
+          <span class="v-tag">AI×業務変革ブリッジ</span>
+        </div>
+        <ul class="value-bullets">
+          <li>日本語ビジネス上級として、BCGコンサルタントとの直接コミュニケーションが可能。</li>
+          <li>20年の日本PJ経験に基づくリスク予見・品質管理・ステークホルダー調整。</li>
+          <li>AI技術知見を持つディレクターとして、技術と事業価値創出の両面を統括。</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="conf">Dalian Presoft Company Limited — Alliance Proposal 2026</div>
+  <div class="page-footer"></div>
+</div>
+
+</body>
+</html>

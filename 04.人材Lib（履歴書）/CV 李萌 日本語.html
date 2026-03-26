@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コアメンバープロフィール — 李 萌</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap');
+
+  :root {
+    --bcg-green: #0e6b57;
+    --bcg-green-dark: #094a3c;
+    --bcg-green-light: #1a9e70;
+    --bcg-accent: #2ec4b6;
+    --ink: #162024;
+    --ink-sec: #3d4a50;
+    --muted: #6b7980;
+    --line: #d4ddd8;
+    --bg-subtle: #f5f8f6;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: #ddd9d4;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 1200px;
+    min-height: 800px;
+    background: var(--white);
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    display: grid;
+    grid-template-columns: 264px 1fr;
+  }
+
+  /* ══════════ SIDEBAR ══════════ */
+  .sidebar {
+    background: linear-gradient(175deg, #0a5544 0%, var(--bcg-green) 40%, #0d6050 100%);
+    color: #fff;
+    padding: 26px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.035);
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.025);
+  }
+
+  .photo-frame {
+    width: 82px; height: 82px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    margin: 0 auto 12px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid rgba(255,255,255,0.2);
+    position: relative; z-index: 1;
+  }
+
+  .photo-initials {
+    font-size: 30px; font-weight: 800; color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .name-block { text-align: center; margin-bottom: 2px; position: relative; z-index: 1; }
+  .name-jp { font-size: 20px; font-weight: 800; letter-spacing: 3px; }
+  .name-en {
+    font-family: 'DM Sans'; font-size: 10px;
+    color: rgba(255,255,255,0.5); letter-spacing: 2px;
+    text-transform: uppercase; margin-top: 2px;
+  }
+
+  .role-line {
+    text-align: center; font-size: 11px; font-weight: 500;
+    color: rgba(255,255,255,0.88); letter-spacing: 0.5px;
+    padding: 10px 0 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 14px; position: relative; z-index: 1;
+    line-height: 1.7;
+  }
+
+  .sb-title {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 6px;
+  }
+
+  .sb-section { margin-bottom: 12px; position: relative; z-index: 1; }
+
+  .cert-row {
+    display: flex; gap: 6px; margin-bottom: 3px;
+    font-size: 10px; line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+  }
+  .cert-row.featured {
+    background: rgba(46,196,182,0.12);
+    border: 1px solid rgba(46,196,182,0.25);
+    border-radius: 3px;
+    padding: 5px 7px;
+    margin-bottom: 5px;
+    flex-direction: column; gap: 1px;
+  }
+  .cert-row.featured .cert-main {
+    display: flex; gap: 6px; font-weight: 600; font-size: 10px;
+    color: #fff;
+  }
+  .cert-issuer {
+    font-size: 8.5px; color: rgba(255,255,255,0.55);
+    padding-left: 10px; line-height: 1.4;
+    letter-spacing: 0.3px;
+  }
+  .cert-dot {
+    width: 4px; height: 4px; min-width: 4px;
+    border-radius: 50%; background: var(--bcg-accent);
+    margin-top: 5px;
+  }
+
+  .tag-wrap { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag {
+    font-size: 9px; padding: 2px 6px; border-radius: 2px;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.85);
+  }
+  .tag.primary {
+    background: rgba(46,196,182,0.22); color: #fff; font-weight: 600;
+  }
+
+  .sb-value-section {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    position: relative; z-index: 1;
+  }
+
+  .sb-value-item {
+    display: flex; gap: 6px; margin-bottom: 4px;
+    font-size: 9.5px; line-height: 1.55;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .sb-footer {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 8px; color: rgba(255,255,255,0.35); line-height: 1.6;
+    position: relative; z-index: 1;
+  }
+
+  /* ══════════ MAIN ══════════ */
+  .main {
+    padding: 22px 30px 16px 26px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 10px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--bcg-green);
+  }
+  .h-tag {
+    font-family: 'DM Sans'; font-size: 8.5px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--bcg-green);
+  }
+  .h-title { font-size: 16px; font-weight: 800; letter-spacing: 0.5px; margin-top: 1px; }
+  .header-right {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; color: #bbb; text-transform: uppercase;
+  }
+
+  /* Summary */
+  .summary-block {
+    background: var(--bg-subtle);
+    border-left: 3px solid var(--bcg-green);
+    padding: 10px 14px;
+    border-radius: 0 3px 3px 0;
+    margin-bottom: 10px;
+  }
+  .summary-headline {
+    font-size: 13.5px; font-weight: 800; line-height: 1.5;
+    color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+  .summary-text {
+    font-size: 10.5px; line-height: 1.8; color: var(--ink-sec);
+  }
+  .summary-text strong { color: var(--ink); }
+
+  /* Highlights */
+  .hl-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px; }
+  .hl-card {
+    background: var(--bg-subtle); border-radius: 3px;
+    padding: 8px 10px; position: relative; overflow: hidden;
+  }
+  .hl-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--bcg-green);
+  }
+  .hl-num {
+    font-family: 'DM Sans'; font-size: 22px; font-weight: 800;
+    color: var(--bcg-green); line-height: 1;
+  }
+  .hl-unit { font-size: 11px; font-weight: 400; }
+  .hl-label { font-size: 9px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+
+  /* Section titles */
+  .sec-title {
+    font-size: 11.5px; font-weight: 800; color: var(--ink);
+    margin-bottom: 6px; display: flex; align-items: center; gap: 7px;
+  }
+  .sec-bar { width: 3px; height: 13px; background: var(--bcg-green); border-radius: 2px; }
+
+  /* ══════════ CAREER TIMELINE ══════════ */
+  .career-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 7px;
+    margin-bottom: 10px;
+  }
+
+  .career-card {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px; display: flex; flex-direction: column;
+    transition: border-color 0.2s;
+  }
+  .career-card:hover { border-color: var(--bcg-green); }
+  .career-card.full-width { grid-column: 1 / -1; }
+
+  .career-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; }
+  .career-title { font-size: 11px; font-weight: 700; }
+  .career-badge {
+    font-family: 'DM Sans'; font-size: 7.5px; font-weight: 700;
+    letter-spacing: 1px; padding: 1px 6px; border-radius: 2px;
+    background: rgba(14,107,87,0.08); color: var(--bcg-green);
+    text-transform: uppercase; white-space: nowrap;
+  }
+
+  .career-period { font-size: 9px; color: var(--bcg-green-light); font-weight: 500; margin-bottom: 4px; }
+
+  .career-bullets { font-size: 9px; line-height: 1.6; color: var(--ink-sec); list-style: none; }
+  .career-bullets li { position: relative; padding-left: 9px; margin-bottom: 1.5px; }
+  .career-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--line); }
+
+  .career-tech {
+    font-size: 8px; color: var(--muted); margin-top: 3px;
+    font-family: 'DM Sans'; letter-spacing: 0.3px;
+  }
+  .career-tech strong { color: var(--bcg-green); font-weight: 700; }
+
+  /* Bottom section */
+  .bottom-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px; }
+
+  .value-panel {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px;
+  }
+  .value-panel h4 {
+    font-size: 10px; font-weight: 800; color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+
+  .value-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .v-tag {
+    font-size: 9px; font-weight: 600; padding: 3px 7px;
+    border-radius: 999px; background: #e8f3ee;
+    color: var(--bcg-green-dark); border: 1px solid #cce3d8;
+  }
+
+  .value-bullets { padding-left: 14px; }
+  .value-bullets li {
+    font-size: 9px; line-height: 1.7; color: var(--ink-sec);
+    margin-bottom: 2px;
+  }
+
+  .role-panel {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px;
+  }
+  .role-panel h4 {
+    font-size: 10px; font-weight: 800; color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+
+  .role-item { margin-bottom: 5px; }
+  .role-item strong {
+    font-size: 9.5px; display: block; margin-bottom: 1px;
+    color: var(--ink);
+  }
+  .role-item p {
+    font-size: 8.5px; line-height: 1.6; color: var(--muted); margin: 0;
+  }
+
+  /* Footer */
+  .page-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bcg-green-dark), var(--bcg-green), var(--bcg-accent));
+  }
+  .conf {
+    position: absolute; bottom: 10px; right: 30px;
+    font-family: 'DM Sans'; font-size: 7.5px;
+    letter-spacing: 1.5px; color: #c0c0c0; text-transform: uppercase;
+  }
+
+  @media print { body { background: #fff; } .page { box-shadow: none; margin: 0; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════ SIDEBAR ══════════ -->
+  <div class="sidebar">
+    <div class="photo-frame"><span class="photo-initials">李</span></div>
+    <div class="name-block">
+      <div class="name-jp">李 萌</div>
+      <div class="name-en">リ モン</div>
+    </div>
+    <div class="role-line">AI戦略 / プロダクト / 事業統括</div>
+
+    <div class="sb-section">
+      <div class="sb-title">Language</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>日本語：技術文書の読解・作成が可能</span></div>
+      </div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>英語：ビジネス流暢（読み書き・会話）</span></div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Team Management</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>創業者として10年超のチーム統括経験</span></div>
+        <div class="cert-issuer">複数のAIスタートアップを創業・経営、プロダクトチーム・R&amp;Dチームを統括</div>
+      </div>
+      <div class="cert-row"><span class="cert-dot"></span><span>国家重点研究プロジェクトのチームリーダー</span></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Academic Background</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>北京大学 理学博士（CS）</span></div>
+        <div class="cert-issuer">ソフトウェア工学・AI・NLP・知識工学</div>
+      </div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>浙江大学 計算機学院 ポストドクトラル研究員</span></div>
+      </div>
+      <div class="cert-row"><span class="cert-dot"></span><span>学術論文10本以上・特許2件</span></div>
+      <div class="cert-row"><span class="cert-dot"></span><span>中国国家重点研究開発プログラム複数に参画</span></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Affiliation</div>
+      <div class="cert-row"><span class="cert-dot"></span><span>清華大学 長三角研究院 副センター長</span></div>
+      <div class="cert-row"><span class="cert-dot"></span><span>武漢大学 蘇州研究院 副センター長</span></div>
+      <div class="cert-row"><span class="cert-dot"></span><span>中国科学技術部 重点R&amp;D 中核技術責任者</span></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Core Competencies</div>
+      <div class="tag-wrap">
+        <span class="tag primary">AI戦略・事業設計</span>
+        <span class="tag primary">プロダクト統括</span>
+        <span class="tag primary">チームマネジメント</span>
+        <span class="tag primary">NLP / 知識工学</span>
+        <span class="tag">データマイニング</span>
+        <span class="tag">ソフトウェア工学</span>
+        <span class="tag">情報検索</span>
+        <span class="tag">エンタープライズAI</span>
+      </div>
+    </div>
+
+    <div class="sb-value-section">
+      <div class="sb-title">金融・保険領域への適用力</div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>AI×企業知識基盤の戦略設計</span></div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>大規模データ分析・意思決定支援</span></div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>エンタープライズAI製品の企画・実装</span></div>
+    </div>
+
+    <div class="sb-footer">
+      大連百易軟件株式会社<br>
+      Dalian Presoft Company Limited
+    </div>
+  </div>
+
+  <!-- ══════════ MAIN ══════════ -->
+  <div class="main">
+
+    <div class="header">
+      <div>
+        <div class="h-tag">Core Member Profile</div>
+        <div class="h-title">コアメンバー紹介</div>
+      </div>
+      <div class="header-right">Confidential</div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="summary-block">
+      <div class="summary-headline">北京大学博士 × 連続起業家。AI戦略からプロダクト実装まで一貫して推進できるリーダー。</div>
+      <div class="summary-text">
+        <strong>北京大学で理学博士号</strong>を取得後、<strong>浙江大学でポストドクトラル研究員</strong>としてAI・NLP分野の研究に従事。現在は<strong>清華大学・武漢大学の研究機関で副センター長</strong>を兼任し、中国科学技術部重点R&amp;Dプロジェクトの中核技術責任者を務める。
+        創業者として<strong>10年超のチームマネジメント経験</strong>を持ち、エンタープライズAIプラットフォームの構想・設計・市場投入を主導。<strong>学術×事業×技術を統合し、戦略的AIソリューションを推進</strong>する。
+      </div>
+    </div>
+
+    <!-- Key Highlights -->
+    <div class="hl-row">
+      <div class="hl-card">
+        <div class="hl-num">15<span class="hl-unit">年+</span></div>
+        <div class="hl-label">AI・ソフトウェア領域の<br>研究開発・事業経験</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">10<span class="hl-unit">年+</span></div>
+        <div class="hl-label">創業者・CEOとしての<br>チーム統括経験</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">3<span class="hl-unit">社</span></div>
+        <div class="hl-label">創業・経営した<br>AI関連企業</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">5<span class="hl-unit">件+</span></div>
+        <div class="hl-label">エンタープライズAI<br>プロダクト企画・投入</div>
+      </div>
+    </div>
+
+    <!-- Career / Products -->
+    <div class="sec-title"><span class="sec-bar"></span>事業・プロダクト実績</div>
+
+    <div class="career-grid">
+      <div class="career-card">
+        <div class="career-head">
+          <div class="career-title">珊瑚智成（北京）科技有限公司</div>
+          <div class="career-badge">Founder & CEO</div>
+        </div>
+        <div class="career-period">2023.06 – 現在 ｜ AI Software Platform</div>
+        <ul class="career-bullets">
+          <li>珊瑚クラウド・スーパーソフトウェアファクトリーを開発・運営</li>
+          <li>AnyBuilder：AIによるインテリジェントソフトウェア構築PF</li>
+          <li>職閲：企業向けAI業務アプリケーションPF</li>
+        </ul>
+        <div class="career-tech"><strong>Domain:</strong> Generative AI · Low-Code · Enterprise SaaS</div>
+      </div>
+
+      <div class="career-card">
+        <div class="career-head">
+          <div class="career-title">北京行数通科技有限公司</div>
+          <div class="career-badge">Founder & CEO</div>
+        </div>
+        <div class="career-period">2016.11 – 現在 ｜ Enterprise Growth & Intelligence</div>
+        <ul class="career-bullets">
+          <li>マタイク：企業一体化グロースプラットフォーム</li>
+          <li>知識匯：ナレッジマネジメント基盤</li>
+          <li>小理簡報・小理商業情報：AIビジネスインテリジェンス</li>
+        </ul>
+        <div class="career-tech"><strong>Domain:</strong> Data Mining · NLP · Knowledge Management · BI</div>
+      </div>
+
+      <div class="career-card">
+        <div class="career-head">
+          <div class="career-title">北京医悟空科技（深圳寧遠傘下）</div>
+          <div class="career-badge">Founder</div>
+        </div>
+        <div class="career-period">2016.01 – 2016.10 ｜ Healthcare Tech（M&amp;A Exit）</div>
+        <ul class="career-bullets">
+          <li>医療リソース管理・スケジューリングシステムを開発</li>
+          <li>事業を成長させ、親会社による買収（Exit）を実現</li>
+        </ul>
+        <div class="career-tech"><strong>Domain:</strong> Healthcare IT · Resource Optimization</div>
+      </div>
+
+      <div class="career-card">
+        <div class="career-head">
+          <div class="career-title">北大医療情報技術有限公司</div>
+          <div class="career-badge">Product Director</div>
+        </div>
+        <div class="career-period">2014.07 – 2016.01 ｜ Medical Big Data & Cloud</div>
+        <ul class="career-bullets">
+          <li>モバイル医療ソリューション・医療ハイブリッドクラウドを設計</li>
+          <li>北京市心血管疾患ビッグデータPF、医療知識グラフを構築</li>
+        </ul>
+        <div class="career-tech"><strong>Domain:</strong> Medical AI · Knowledge Graph · Big Data · Cloud</div>
+      </div>
+    </div>
+
+    <!-- Bottom: BCG value + Expected role -->
+    <div class="bottom-row" style="grid-template-columns: 1fr;">
+      <div class="value-panel">
+        <h4>対BCG協業での提供価値</h4>
+        <div class="value-tags">
+          <span class="v-tag">AI事業戦略</span>
+          <span class="v-tag">プロダクト設計・ロードマップ</span>
+          <span class="v-tag">チーム統括</span>
+          <span class="v-tag">学術知見の事業化</span>
+        </div>
+        <ul class="value-bullets">
+          <li>金融・保険業務のAI戦略を構想し、ビジネス要件をAI製品仕様に転換。</li>
+          <li>北京大学・清華大学の研究ネットワークを活用し、最先端技術を迅速に案件適用。</li>
+          <li>複数事業の創業・Exit経験に基づく実践的なプロジェクト推進力。</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="conf">Dalian Presoft Company Limited — Alliance Proposal 2026</div>
+  <div class="page-footer"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IST AI実績</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f1e8;
+      --panel: #fffaf2;
+      --text: #1f2a37;
+      --muted: #5b6673;
+      --line: #d9cdb7;
+      --accent: #9d5c0d;
+      --accent-strong: #6e3f06;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(157, 92, 13, 0.10), transparent 30%),
+        linear-gradient(180deg, #f8f4ec 0%, var(--bg) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .card {
+      display: block;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 250, 242, 0.92);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      box-shadow: 0 10px 30px rgba(49, 35, 18, 0.06);
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 18px 36px rgba(49, 35, 18, 0.10);
+    }
+
+    .label {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .title {
+      margin-top: 8px;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .meta {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>IST AI実績 HTML</h1>
+    <p>GitHub Pages 公開用の入口ページです。以下のリンクから各 HTML を直接開けます。</p>
+
+    <div class="grid">
+      <a class="card" href="./deliverables/IST_AI実績_s1v1.html">
+        <div class="label">Slide 1</div>
+        <div class="title">IST_AI実績_s1v1.html</div>
+        <p class="meta">1 枚目の公開ページ</p>
+      </a>
+
+      <a class="card" href="./deliverables/IST_AI実績_s2v1.html">
+        <div class="label">Slide 2</div>
+        <div class="title">IST_AI実績_s2v1.html</div>
+        <p class="meta">2 枚目の公開ページ</p>
+      </a>
+    </div>
+
+    <footer>この公開用ディレクトリには、ページ内リンクで参照される履歴書 HTML も同梱しています。</footer>
+  </main>
+</body>
+</html>

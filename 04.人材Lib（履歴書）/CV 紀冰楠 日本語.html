@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コアメンバープロフィール — 紀 冰楠</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap');
+
+  :root {
+    --bcg-green: #0e6b57;
+    --bcg-green-dark: #094a3c;
+    --bcg-green-light: #1a9e70;
+    --bcg-accent: #2ec4b6;
+    --ink: #162024;
+    --ink-sec: #3d4a50;
+    --muted: #6b7980;
+    --line: #d4ddd8;
+    --bg-subtle: #f5f8f6;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: #ddd9d4;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 1200px;
+    min-height: 800px;
+    background: var(--white);
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    display: grid;
+    grid-template-columns: 264px 1fr;
+  }
+
+  /* ══════════ SIDEBAR ══════════ */
+  .sidebar {
+    background: linear-gradient(175deg, #0a5544 0%, var(--bcg-green) 40%, #0d6050 100%);
+    color: #fff;
+    padding: 26px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.035);
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.025);
+  }
+
+  .photo-frame {
+    width: 82px; height: 82px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    margin: 0 auto 12px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid rgba(255,255,255,0.2);
+    position: relative; z-index: 1;
+  }
+
+  .photo-initials {
+    font-size: 30px; font-weight: 800; color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .name-block { text-align: center; margin-bottom: 2px; position: relative; z-index: 1; }
+  .name-jp { font-size: 20px; font-weight: 800; letter-spacing: 3px; }
+  .name-en {
+    font-family: 'DM Sans'; font-size: 10px;
+    color: rgba(255,255,255,0.5); letter-spacing: 2px;
+    text-transform: uppercase; margin-top: 2px;
+  }
+
+  .role-line {
+    text-align: center; font-size: 11px; font-weight: 500;
+    color: rgba(255,255,255,0.88); letter-spacing: 0.5px;
+    padding: 10px 0 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 14px; position: relative; z-index: 1;
+    line-height: 1.7;
+  }
+
+  .sb-title {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 6px;
+  }
+
+  .sb-section { margin-bottom: 12px; position: relative; z-index: 1; }
+
+  .cert-row {
+    display: flex; gap: 6px; margin-bottom: 3px;
+    font-size: 10px; line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+  }
+  .cert-row.featured {
+    background: rgba(46,196,182,0.12);
+    border: 1px solid rgba(46,196,182,0.25);
+    border-radius: 3px;
+    padding: 5px 7px;
+    margin-bottom: 5px;
+    flex-direction: column; gap: 1px;
+  }
+  .cert-row.featured .cert-main {
+    display: flex; gap: 6px; font-weight: 600; font-size: 10px;
+    color: #fff;
+  }
+  .cert-issuer {
+    font-size: 8.5px; color: rgba(255,255,255,0.55);
+    padding-left: 10px; line-height: 1.4;
+    letter-spacing: 0.3px;
+  }
+  .cert-dot {
+    width: 4px; height: 4px; min-width: 4px;
+    border-radius: 50%; background: var(--bcg-accent);
+    margin-top: 5px;
+  }
+
+  .tag-wrap { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag {
+    font-size: 9px; padding: 2px 6px; border-radius: 2px;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.85);
+  }
+  .tag.primary {
+    background: rgba(46,196,182,0.22); color: #fff; font-weight: 600;
+  }
+
+  .sb-value-section {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    position: relative; z-index: 1;
+  }
+
+  .sb-value-item {
+    display: flex; gap: 6px; margin-bottom: 4px;
+    font-size: 9.5px; line-height: 1.55;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .sb-footer {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 8px; color: rgba(255,255,255,0.35); line-height: 1.6;
+    position: relative; z-index: 1;
+  }
+
+  /* ══════════ MAIN ══════════ */
+  .main {
+    padding: 22px 30px 16px 26px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 10px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--bcg-green);
+  }
+  .h-tag {
+    font-family: 'DM Sans'; font-size: 8.5px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--bcg-green);
+  }
+  .h-title { font-size: 16px; font-weight: 800; letter-spacing: 0.5px; margin-top: 1px; }
+  .header-right {
+    font-family: 'DM Sans'; font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; color: #bbb; text-transform: uppercase;
+  }
+
+  /* Summary */
+  .summary-block {
+    background: var(--bg-subtle);
+    border-left: 3px solid var(--bcg-green);
+    padding: 10px 14px;
+    border-radius: 0 3px 3px 0;
+    margin-bottom: 10px;
+  }
+  .summary-headline {
+    font-size: 13.5px; font-weight: 800; line-height: 1.5;
+    color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+  .summary-text {
+    font-size: 10.5px; line-height: 1.8; color: var(--ink-sec);
+  }
+  .summary-text strong { color: var(--ink); }
+
+  /* Highlights */
+  .hl-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px; }
+  .hl-card {
+    background: var(--bg-subtle); border-radius: 3px;
+    padding: 8px 10px; position: relative; overflow: hidden;
+  }
+  .hl-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--bcg-green);
+  }
+  .hl-num {
+    font-family: 'DM Sans'; font-size: 22px; font-weight: 800;
+    color: var(--bcg-green); line-height: 1;
+  }
+  .hl-unit { font-size: 11px; font-weight: 400; }
+  .hl-label { font-size: 9px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+
+  /* Section titles */
+  .sec-title {
+    font-size: 11.5px; font-weight: 800; color: var(--ink);
+    margin-bottom: 6px; display: flex; align-items: center; gap: 7px;
+  }
+  .sec-bar { width: 3px; height: 13px; background: var(--bcg-green); border-radius: 2px; }
+
+  /* Project grid */
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 10px; }
+
+  .proj-card {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px; display: flex; flex-direction: column;
+    transition: border-color 0.2s;
+  }
+  .proj-card:hover { border-color: var(--bcg-green); }
+
+  .proj-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; }
+  .proj-title { font-size: 11px; font-weight: 700; }
+  .proj-badge {
+    font-family: 'DM Sans'; font-size: 7.5px; font-weight: 700;
+    letter-spacing: 1px; padding: 1px 6px; border-radius: 2px;
+    background: rgba(14,107,87,0.08); color: var(--bcg-green);
+    text-transform: uppercase; white-space: nowrap;
+  }
+
+  .proj-client { font-size: 9px; color: var(--bcg-green-light); font-weight: 500; margin-bottom: 4px; }
+
+  .proj-bullets { font-size: 9px; line-height: 1.6; color: var(--ink-sec); list-style: none; }
+  .proj-bullets li { position: relative; padding-left: 9px; margin-bottom: 1.5px; }
+  .proj-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--line); }
+
+  .proj-outcome {
+    font-size: 8.5px; color: var(--bcg-green); font-weight: 700;
+    margin-top: 4px; letter-spacing: 0.2px;
+  }
+
+  /* Bottom section: BCG value + role */
+  .bottom-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px; }
+
+  .value-panel {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px;
+  }
+  .value-panel h4 {
+    font-size: 10px; font-weight: 800; color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+
+  .value-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .v-tag {
+    font-size: 9px; font-weight: 600; padding: 3px 7px;
+    border-radius: 999px; background: #e8f3ee;
+    color: var(--bcg-green-dark); border: 1px solid #cce3d8;
+  }
+
+  .value-bullets { padding-left: 14px; }
+  .value-bullets li {
+    font-size: 9px; line-height: 1.7; color: var(--ink-sec);
+    margin-bottom: 2px;
+  }
+
+  .role-panel {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 9px 11px;
+  }
+  .role-panel h4 {
+    font-size: 10px; font-weight: 800; color: var(--bcg-green-dark);
+    margin-bottom: 5px;
+  }
+
+  .role-item { margin-bottom: 5px; }
+  .role-item strong {
+    font-size: 9.5px; display: block; margin-bottom: 1px;
+    color: var(--ink);
+  }
+  .role-item p {
+    font-size: 8.5px; line-height: 1.6; color: var(--muted); margin: 0;
+  }
+
+  /* Footer */
+  .page-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bcg-green-dark), var(--bcg-green), var(--bcg-accent));
+  }
+  .conf {
+    position: absolute; bottom: 10px; right: 30px;
+    font-family: 'DM Sans'; font-size: 7.5px;
+    letter-spacing: 1.5px; color: #c0c0c0; text-transform: uppercase;
+  }
+
+  @media print { body { background: #fff; } .page { box-shadow: none; margin: 0; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════ SIDEBAR ══════════ -->
+  <div class="sidebar">
+    <div class="photo-frame"><span class="photo-initials">紀</span></div>
+    <div class="name-block">
+      <div class="name-jp">紀 冰楠</div>
+      <div class="name-en">キ ヒョウナン</div>
+    </div>
+    <div class="role-line">AI・データ活用を軸とした<br>DX推進コンサルタント</div>
+
+    <div class="sb-section">
+      <div class="sb-title">Language</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>英語：ビジネス流暢（読み書き・会話）</span></div>
+      </div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>日本語：ビジネス文書作成・読解</span></div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Japan Project Experience</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>日本向けプロジェクト参画 5年以上</span></div>
+        <div class="cert-issuer">PwC Japanグループ・日立建機等の日本エンタープライズ顧客への直接支援実績</div>
+      </div>
+      <div class="cert-row"><span class="cert-dot"></span><span>日本顧客との要件定義・週次報告を主導</span></div>
+      <div class="cert-row"><span class="cert-dot"></span><span>チームのプロジェクトマネジメント経験</span></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Certification</div>
+      <div class="cert-row featured">
+        <div class="cert-main"><span class="cert-dot"></span><span>AI大規模言語モデル 上級R&Dエンジニア</span></div>
+        <div class="cert-issuer">中国工業情報化部（MIIT）認定</div>
+      </div>
+      <div class="cert-row"><span class="cert-dot"></span><span>ServiceNow 認定システムアドミニストレータ</span></div>
+      <div class="cert-row"><span class="cert-dot"></span><span>Salesforce 認定アドミニストレータ</span></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Core Competencies</div>
+      <div class="tag-wrap">
+        <span class="tag primary">LLM / 生成AI</span>
+        <span class="tag primary">AI-OCR / IDP</span>
+        <span class="tag primary">非構造化データ処理</span>
+        <span class="tag primary">英語（ビジネス流暢）</span>
+        <span class="tag">Python / API設計</span>
+        <span class="tag">ServiceNow（6年）</span>
+        <span class="tag">Salesforce</span>
+        <span class="tag">業務プロセス設計</span>
+        <span class="tag">要件定義・Fit&Gap</span>
+        <span class="tag">PoC設計・実行</span>
+      </div>
+    </div>
+
+    <div class="sb-value-section">
+      <div class="sb-title">金融・保険領域への適用力</div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>非構造化帳票のAI自動読取・分類（KYC・保険請求等）</span></div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>査定・コンプライアンス審査の承認自動化</span></div>
+      <div class="sb-value-item"><span class="cert-dot"></span><span>CRM・ITSM連携による顧客管理・内部統制強化</span></div>
+    </div>
+
+    <div class="sb-footer">
+      大連百易軟件株式会社<br>
+      Dalian Presoft Company Limited
+    </div>
+  </div>
+
+  <!-- ══════════ MAIN ══════════ -->
+  <div class="main">
+
+    <div class="header">
+      <div>
+        <div class="h-tag">Core Member Profile</div>
+        <div class="h-title">コアメンバー紹介</div>
+      </div>
+      <div class="header-right">Confidential</div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="summary-block">
+      <div class="summary-headline">AI導入を業務価値・統制・定着まで一気通貫で接続する実務型メンバー。</div>
+      <div class="summary-text">
+        LLM/生成AIによる<strong>非構造化データ処理基盤</strong>の設計から、<strong>ServiceNow・Salesforce</strong>等の業務基盤導入まで<strong>8年超</strong>の実績。
+        PwC Japanグループ・日立建機等<strong>日本エンタープライズ顧客向けプロジェクトに5年以上参画</strong>し、要件定義〜定着化を一貫推進。
+        <strong>英語でのビジネスコミュニケーションに堪能</strong>、日本語での<strong>ビジネス文書作成・読解にも対応</strong>。
+      </div>
+    </div>
+
+    <!-- Highlight Metrics -->
+    <div class="hl-row">
+      <div class="hl-card">
+        <div class="hl-num">8<span class="hl-unit">年+</span></div>
+        <div class="hl-label">AI × DX 実務経験</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">90<span class="hl-unit">%↓</span></div>
+        <div class="hl-label">AI活用による手入力削減</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">5<span class="hl-unit">年+</span></div>
+        <div class="hl-label">日本顧客向けプロジェクト参画</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">10<span class="hl-unit">名</span></div>
+        <div class="hl-label">チームマネジメント実績</div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="sec-title"><span class="sec-bar"></span>主要プロジェクト実績</div>
+
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">AI文書処理基盤構築（国際物流）</div>
+          <div class="proj-badge">PL</div>
+        </div>
+        <div class="proj-client">2025 — 物流業クライアント ｜ AI / Operations</div>
+        <ul class="proj-bullets">
+          <li>非構造PDF/画像を対象にLLMベースの文書分類・項目抽出基盤を設計</li>
+          <li>PoC〜API連携・基幹接続・ユーザー教育まで一貫担当</li>
+        </ul>
+        <div class="proj-outcome">▶ 手作業入力90%削減 ｜ 認識精度90%以上</div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">ServiceNow ITSM 日本展開</div>
+          <div class="proj-badge">PL</div>
+        </div>
+        <div class="proj-client">2022–2024 — 日本エンタープライズ顧客 ｜ BPR / Governance</div>
+        <ul class="proj-bullets">
+          <li>IT・HR等複数部門のWS主導、申請カテゴリ・承認ルール・権限を定義</li>
+          <li>サービスカタログ・動的フォーム・承認WF自動化を設計・構築</li>
+        </ul>
+        <div class="proj-outcome">▶ 20名への技術トランスファー完了 ｜ E2Eプロセス標準化</div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">PwC Japanグループ 従業員サービス基盤</div>
+          <div class="proj-badge">SE</div>
+        </div>
+        <div class="proj-client">2020–2021 — PwC Japanグループ ｜ Client Facing</div>
+        <ul class="proj-bullets">
+          <li>Big4ファーム向け従業員サービス申請基盤をE2Eで単独担当</li>
+          <li>動的フォーム・多段承認の設計、<strong>日本顧客との週次報告・改善提案を主導</strong></li>
+        </ul>
+        <div class="proj-outcome">▶ 申請リードタイム短縮 ｜ 問い合わせ工数大幅削減</div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">日立建機 CRM移行 ＆ SaaS導入</div>
+          <div class="proj-badge">SE</div>
+        </div>
+        <div class="proj-client">2020–2021 — 日立建機株式会社 ｜ Data / Transformation</div>
+        <ul class="proj-bullets">
+          <li>Salesforce Sales Cloud全面移行、Alteryxでデータ移行・項目標準化を推進</li>
+          <li>購買・在庫領域のプロセス分析、承認・権限・データ連携を整理</li>
+        </ul>
+        <div class="proj-outcome">▶ 営業プロセス標準化 ｜ オフライン業務の完全デジタル化</div>
+      </div>
+    </div>
+
+    <!-- Bottom: BCG value + Expected role -->
+    <div class="bottom-row">
+      <div class="value-panel">
+        <h4>対BCG協業での提供価値</h4>
+        <div class="value-tags">
+          <span class="v-tag">課題仮説の構造化</span>
+          <span class="v-tag">要件定義</span>
+          <span class="v-tag">PoC設計</span>
+          <span class="v-tag">業務標準化</span>
+          <span class="v-tag">導入・定着化</span>
+        </div>
+        <ul class="value-bullets">
+          <li>戦略構想を実行可能な業務要件・システム要件へ具体化。</li>
+          <li>AI導入を統制・定着化まで含め一気通貫で設計。</li>
+          <li>金融・保険の説明責任・証跡管理に対応可能。</li>
+        </ul>
+      </div>
+
+      <div class="role-panel">
+        <h4>今回提案における期待役割</h4>
+        <div class="role-item">
+          <strong>業務変革アーキテクト</strong>
+          <p>現場課題の可視化 → To-Be業務設計</p>
+        </div>
+        <div class="role-item">
+          <strong>AI／業務実装ブリッジ</strong>
+          <p>PoC設計・要件分解・システム連携</p>
+        </div>
+        <div class="role-item">
+          <strong>クライアント推進担当</strong>
+          <p>英語力を活かしたグローバル連携、業務・IT・コンサル間の橋渡しと定着化</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="conf">Dalian Presoft Company Limited — Alliance Proposal 2026</div>
+  <div class="page-footer"></div>
+</div>
+
+</body>
+</html>
