@@ -132,6 +132,15 @@ h1,h2,h3{text-wrap:balance}
 .card p,.service-card p,.panel p,.mini-list li,.bullet-list li,.matrix-note,.footnote{
   color:var(--text-muted);font-size:15px;line-height:1.72
 }
+.info-block{display:grid;gap:10px;margin-top:8px}
+.info-row{display:grid;gap:3px}
+.info-key{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-brand);line-height:1.2
+}
+.info-key.alt{color:var(--accent-ai)}
+.info-val{
+  color:var(--text-muted);font-size:14px;line-height:1.55
+}
 .metric-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .summary-row .metric-num{font-size:32px;letter-spacing:-.01em}
 .summary-row .metric-title{font-size:12px}
@@ -748,7 +757,7 @@ h1,h2,h3{text-wrap:balance}
         <div class="big-grid">
           <div class="service-card"><div class="label">01</div><h3>保険業務理解・対応領域</h3><p>保険業務の全体像と対応可能領域を先に示し、AI提案の前提となる業務理解を明確にする。</p></div>
           <div class="service-card"><div class="label">02</div><h3>AI事業・会社能力</h3><p>4つのAIサービスライン、信頼基盤、実装体制を示し、ISTの提供価値を定義する。</p></div>
-          <div class="service-card"><div class="label">03</div><h3>人材構成・代表人材</h3><p>役割分担と主要メンバーの強みを示し、実行体制の現実感を補強する。</p></div>
+          <div class="service-card"><div class="label">03</div><h3>北京大学との協業</h3><p>代表人材の紹介</p></div>
           <div class="service-card"><div class="label">04</div><h3>AI案件実績</h3><p>AI Application、AI Agent、ASC、Embodied AI の実例を整理し、業務理解が実装へつながることを示す。</p></div>
         </div>
         <div class="footer-note"><span>From conclusion to evidence</span><span class="slide-no">03</span></div>
@@ -961,8 +970,8 @@ h1,h2,h3{text-wrap:balance}
           <div class="chapter-no">03</div>
           <div class="chapter-copy">
             <div class="eyebrow">第3部</div>
-            <h1>人材構成・代表人材</h1>
-            <p class="sub">実行体制を役割分担と主要メンバーで可視化し、提案から実装までの現実感を補強する。</p>
+            <h1>北京大学との協業</h1>
+            <p class="sub">代表人材の紹介</p>
           </div>
         </div>
         <div class="footer-note"><span>Section opener</span><span class="slide-no">12</span></div>
@@ -1114,7 +1123,7 @@ h1,h2,h3{text-wrap:balance}
       <div class="inner top">
         <div class="eyebrow">北京大学協業</div>
         <h2>北京大学との協業プロダクト</h2>
-        <p class="sub">李萌の学術・事業背景を起点に、北京大学の研究成果を製品・サービス体系として整理した「第三世代ソフトウェア工場」を、ISTが日本企業向けに実装・導入できる形へ接続する。</p>
+        <p class="sub">北京大学の研究成果を製品・サービス体系として整理した「第三世代ソフトウェア工場」を、ISTが日本企業向けに実装・導入できる形へ接続する。</p>
         <div class="pku-collab">
           <div class="pku-visual">
             <div class="pku-image-slot">
@@ -1589,16 +1598,269 @@ h1,h2,h3{text-wrap:balance}
     <section class="slide" data-chapter="4">
       <div class="inner top">
         <div class="eyebrow">AIエージェント追加事例</div>
-        <h2>AI Agent の追加実例</h2>
-        <div class="grid-3">
-          <div class="card"><div class="label">業務マルチAgent</div><h3>不動産 AI Solution / 大手不動産 マルチAgent</h3><p>物件分析、市場調査、会議録自動化を組み合わせ、情報収集から要約までを自律化する。</p></div>
-          <div class="card"><div class="label">Agent + RAG</div><h3>自動車企業 AI Solution</h3><p>戦略立案、知識検索、ChatBI を統合し、企業知識問答と分析支援を実装する。</p></div>
-          <div class="card"><div class="label">プラットフォーム</div><h3>グローバル不動産企業向け AIプラットフォーム</h3><p>Agent Cluster、報告生成、会議管理までを含むプラットフォーム型案件。</p></div>
-          <div class="card"><div class="label">企業Agent基盤</div><h3>グローバル自動車企業向け AIプラットフォーム</h3><p>Knowledge QA、Agent Store、権限管理まで含めた企業向けAgent基盤。</p></div>
-          <div class="card"><div class="label">活用支援</div><h3>市場分析・調査・通関Agent導入支援</h3><p>Agent構想から実装、定着までを伴走し、市場分析・調査・通関領域での導入実装力を示す。</p></div>
-          <div class="card"><div class="label">会議Agent</div><h3>議事録・タスク管理 Agent</h3><p>会議録音から議事録生成、タスク抽出、フォローアップ管理までを一気通貫で自動化する。</p></div>
+        <h2>大手不動産マルチAgent</h2>
+        <p class="sub"><span class="tag">不動産</span> <span class="tag">業務統合基盤</span> <span class="tag">マルチAgent</span> 不動産企業内に分散する顧客・物件・会議・部門情報を横断接続し、営業判断、案件推進、情報共有を一つの業務体験に統合した企業向けAIソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>散在データを意思決定に使える形へ再編</h3>
+            <p>不動産業務では、顧客情報、物件情報、会議記録、部門ナレッジが個別に蓄積されやすく、営業判断と案件推進のスピードを阻害しやすい。本案件では、社内外に分散する情報を横断的に統合し、検索、要約、タスク化までを複数Agentで分担することで、現場で使える意思決定基盤へ転換した。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>社内外に分散した情報源を一つの業務体験へ統合</li>
+              <li>会議、顧客、物件、部門情報を同時に参照可能</li>
+              <li>用途別に Agent を切り替え、調査から実行までを支援</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">接続資産</div>
+            <h3>既存システムと業務データをそのまま活用</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">ERP On-Prem</span>
+              <span class="tag">CRM</span>
+              <span class="tag">Salesforce</span>
+              <span class="tag">SharePoint</span>
+            </div>
+            <ul class="bullet-list">
+              <li>ドキュメント: Word、Excel、PDF、PPT、画像、音声、動画</li>
+              <li>会議情報: 録音、記録、要約、タスク</li>
+              <li>不動産情報: 物件情報、新規案件、相談ドキュメント</li>
+              <li>営業情報: 顧客情報、新規顧客、商談履歴</li>
+              <li>組織情報: 各部門ナレッジ、共有情報、RAG資産</li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-note"><span>AI Agent extended cases</span><span class="slide-no">18</span></div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>案件推進の高速化</h3>
+            <p>会議録音・会議内容から議事録、要約、タスクを自動生成し、案件推進の初動を速める。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>営業判断の高度化</h3>
+            <p>顧客情報、物件情報、商談履歴を横断検索し、担当者の情報収集負荷を下げながら判断品質を高める。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>拡張可能な運用基盤</h3>
+            <p>単一ユースケースに閉じず、業務別 Agent を追加しながら現場運用へ段階的に拡張できる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">18</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>自動車メーカー Agent+RAG 基盤</h2>
+        <p class="sub"><span class="tag">自動車</span> <span class="tag">知識活用基盤</span> <span class="tag">分析高度化</span> <span class="tag">Agent + RAG + ChatBI</span> 戦略立案、知識検索、分析照会を単一基盤へ統合し、情報収集から意思決定までを高速化した自動車業界向けAIソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>知識・分析・業務支援が分断された状態を解消</h3>
+            <p>自動車企業では、戦略検討に必要な知識資産、部門文書、分析データが分散しやすく、情報収集と判断に時間を要しやすい。本案件では、Agent、RAG、ChatBI を単一基盤に統合し、知識検索から分析照会、レポート活用までを一つの業務導線で利用できる構成へ再設計した。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>戦略立案、知識検索、分析照会を単一基盤で利用可能</li>
+              <li>自然言語から必要情報へ到達できる導線を整備</li>
+              <li>業務支援Agentを企業標準機能として提供</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">接続資産</div>
+            <h3>文書・ID・権限を既存システムと統合</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">SharePoint</span>
+              <span class="tag">OneDrive</span>
+              <span class="tag">CloudIDP</span>
+              <span class="tag">API Gateway</span>
+            </div>
+            <ul class="bullet-list">
+              <li>文書同期: SharePoint、OneDrive、BI Folder、KB Folder</li>
+              <li>認証基盤: CloudIDP による統一ログインと権限同期</li>
+              <li>知識空間: Knowledge Space、MySpace、Shared Space</li>
+              <li>運用基盤: Agent Store、Agent Card、Agent Garage</li>
+              <li>分析基盤: Excel2BI、ChatBI API、NL2SQL framework</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>知識活用の定着</h3>
+            <p>社内文書を継続的に同期し、必要な知識へ迅速に到達できる検索体験を実現する。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>業務別 Agent の提供</h3>
+            <p>用途別 Agent を選択可能とし、戦略検討、知識参照、業務支援を現場で使い分けられる。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>分析高度化</h3>
+            <p>ChatBI と NL2SQL により、非技術ユーザーでも自然言語ベースで分析照会とデータ活用を進められる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">19</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>市場調査Agent</h2>
+        <p class="sub"><span class="tag">市場調査</span> <span class="tag">情報収集高度化</span> <span class="tag">要約・構造化</span> 市場情報の収集、要約、構造化を自動化し、製品開発と事業判断に必要なインサイトを迅速に提供する調査支援ソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>市場調査を意思決定に直結する形へ転換</h3>
+            <p>市場調査業務では、外部情報の収集、要約、比較、社内共有に時間を要し、経営判断や製品企画への接続が遅れやすい。本案件では、AI により市場情報の自動収集、要約、構造化を行い、調査結果を再利用可能なナレッジ資産へ変換することで、判断スピードと分析品質を同時に高めた。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>市場情報の収集、要約、構造化を一連で自動化</li>
+              <li>調査結果を社内ナレッジとして蓄積し継続活用</li>
+              <li>製品開発の方向性把握を迅速化</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">導入基盤</div>
+            <h3>Microsoft 基盤上で迅速に実装</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">Power Platform</span>
+              <span class="tag">AI Foundry</span>
+              <span class="tag">ナレッジ蓄積</span>
+              <span class="tag">再利用性</span>
+            </div>
+            <ul class="bullet-list">
+              <li>業務特化型 Agent を迅速に構築できる Microsoft 基盤</li>
+              <li>収集結果を要約・構造化して社内で共有可能</li>
+              <li>継続運用を前提としたナレッジ蓄積型の設計</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>市場調査の自動化</h3>
+            <p>人手で行っていた調査初動を Agent が代替し、情報収集の速度を上げる。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>要約・構造化</h3>
+            <p>調査結果をそのまま貯めるのではなく、判断に使いやすい形へ整理する。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>方向性判断の支援</h3>
+            <p>製品開発の方向性を即座に把握し、競争力強化につながる意思決定を支援する。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">22</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>営業・企画支援Agent</h2>
+        <p class="sub"><span class="tag">営業支援</span> <span class="tag">企画支援</span> <span class="tag">レポート生成</span> 分析結果と社内業務データを接続し、企画立案、フロント業務支援、レポート生成までを一体で支える業務支援ソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>分析結果を営業・企画実務へ接続</h3>
+            <p>多くの企業では、分析結果がレポートに留まり、営業現場や企画判断に十分接続されない。本案件では、業務オペレーションの効率化、FO / SRM データを活用した意思決定高度化、ナレッジ統合を一体化し、分析結果をそのまま実務アクションへつなげる運用モデルを構築した。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>照会、分析、レポート生成を一連の業務として統合</li>
+              <li>FO / SRM データを活用し意思決定を高度化</li>
+              <li>フロント業務支援へ直接つながる活用導線を整備</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">導入基盤</div>
+            <h3>Copilot Studio × Dynamics 365 による業務接続型設計</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">Copilot Studio</span>
+              <span class="tag">Dynamics 365</span>
+              <span class="tag">Power Platform</span>
+              <span class="tag">業務接続</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Copilot Studio / Power Platform による迅速な開発</li>
+              <li>Dynamics 365 データを活用した業務特化型設計</li>
+              <li>ナレッジ検索、照会、レポート生成までを実務導線へ接続</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>営業支援</h3>
+            <p>在庫、発注、仕入先照会などのフロント業務を支援し、現場対応の速度と精度を高める。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>企画判断の高度化</h3>
+            <p>分析結果と社内データを組み合わせ、企画部門が判断材料を迅速に整理できるようにする。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>レポート生成</h3>
+            <p>分析結果をレポートとして自動生成し、部門内共有と説明負荷を下げる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">23</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>通関業務自動化Agent</h2>
+        <p class="sub"><span class="tag">通関</span> <span class="tag">業務自動化</span> <span class="tag">OCR</span> 通関メール処理から伝票データ化、HSコード判定、NACCS形式出力までを一気通貫で自動化し、処理速度と精度を引き上げる通関業務向けソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>通関処理の一連業務を自動化</h3>
+            <p>通関業務では、メール受付、書類確認、コード判定、システム入力が分断されやすく、繁忙期には処理遅延とミスが発生しやすい。本案件では、AI と OCR を活用し、通関メールの自動振り分けから書類データ化、HSコード判定、NACCS形式出力までを一気通貫で自動化し、実務処理の安定性を高めた。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>通関メールの自動振り分け</li>
+              <li>書類のデータ化と HS コード自動判定</li>
+              <li>NACCS 形式への出力まで一気通貫で自動化</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">導入基盤</div>
+            <h3>繁閑差の大きい業務でも速度と精度を維持</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">AI</span>
+              <span class="tag">OCR</span>
+              <span class="tag">HSコード判定</span>
+              <span class="tag">NACCS</span>
+            </div>
+            <ul class="bullet-list">
+              <li>急増する業務量にも柔軟に対応可能</li>
+              <li>人手処理の負荷とミス発生余地を削減</li>
+              <li>通関処理の速度と精度を大幅に向上</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>メール仕分け</h3>
+            <p>受信した通関関連メールを自動で判別し、後続処理へつなぐ。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>書類データ化</h3>
+            <p>OCR と AI により伝票・書類を処理可能なデータへ変換する。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>判定と出力</h3>
+            <p>HS コード判定から NACCS 形式出力までを自動化し、実務へ直結させる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">24</span></div>
       </div>
     </section>
 
@@ -1658,6 +1920,92 @@ h1,h2,h3{text-wrap:balance}
           </div>
         </div>
         <div class="footer-note"><span>Embodied AI evidence</span><span class="slide-no">20</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">ロボット提携企業</div>
+        <h2>主要ロボット企業の日本展開シーン</h2>
+        <p class="sub">IST はロボットを単体販売するのではなく、日本向けAI実装、業務統合、現場導入、運用まで含めて提供する。下記 3 社は、IST が日本市場で展開可能な主要パートナーである。</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提携先 01</div>
+            <h3>LimX Dynamics</h3>
+            <div class="info-block">
+              <div class="info-row">
+                <div class="info-key">会社概要</div>
+                <div class="info-val">科研・導覧・PoC に強く、大学・研究機関で導入実績を持つ双足ロボット企業。</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">主力製品</div>
+                <div class="info-val">TRON1 / TRON2 / LimX Oli</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key">強み</div>
+                <div class="info-val">開放 SDK、Sim2Real、低遅延遥操作、科研導入実績</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">日本展開シーン</div>
+                <div class="info-val">大学・高専の研究平台、博物館・企業展示導覧、製造現場のデータ収集 PoC</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="label">提携先 02</div>
+            <h3>AI² Robotics</h3>
+            <div class="info-block">
+              <div class="info-row">
+                <div class="info-key">会社概要</div>
+                <div class="info-val">具身大モデルを核に、商業・工業領域で量産と商用化を進める汎用知能ロボット企業。</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">主力製品</div>
+                <div class="info-val">AlphaBot 2 / 智魔方 / Alpha Brain</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key">強み</div>
+                <div class="info-val">全域全身 VLA、零样本学習、端側推理、量産実績</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">日本展開シーン</div>
+                <div class="info-val">商業施設・ホテル・金融フロント、半導体・自動車・バイオ領域の業務 PoC・本番導入</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="label">提携先 03</div>
+            <h3>UBTECH</h3>
+            <div class="info-block">
+              <div class="info-row">
+                <div class="info-key">会社概要</div>
+                <div class="info-val">上場企業としての信用力を持ち、工業・康養・教育に広く展開する総合人形ロボット企業。</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">主力製品</div>
+                <div class="info-val">Walker S1 / Walker X / 商用サービスロボット / UGOT</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key">強み</div>
+                <div class="info-val">上場企業の信用力、2,450+ 特許、工場実訓、康養・教育展開</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">日本展開シーン</div>
+                <div class="info-val">製造業 PoC、介護・康養施設、STEM 教育、商業施設での迎賓・案内・巡回</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="label">IST の役割</div>
+          <h3>ロボット販売ではなく、日本市場向け実装・統合・運用を担う</h3>
+          <ul class="bullet-list">
+            <li>日語 AI 実装、LLM / Agent 連携、画面・業務フローの日本向け最適化</li>
+            <li>MES / ERP / CRM / 施設システムとの統合、PoC 設計、現場導入支援</li>
+            <li>法規対応、施工、運用保守まで含めた日本市場での実装責任を担える</li>
+          </ul>
+        </div>
+        <div class="footer-note"><span>Robot partner ecosystem</span><span class="slide-no">21</span></div>
       </div>
     </section>
 
