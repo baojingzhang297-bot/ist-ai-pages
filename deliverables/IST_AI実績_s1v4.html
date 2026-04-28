@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InnoSysTech株式会社 AI事業・実績紹介</title>
+<script>
+if (location.search.includes('capture=1')) {
+  document.documentElement.classList.add('capture-mode');
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-main:#FDFDFD;
+  --bg-secondary:#F2F4F8;
+  --text-main:#1A1F24;
+  --text-muted:#687787;
+  --primary-brand:#00665E;
+  --accent-ai:#00A78F;
+  --line:#D8E0E8;
+  --line-strong:#BED1CC;
+  --brand-soft:#E3F3F0;
+  --accent-soft:#D8F6F0;
+  --shadow:0 18px 48px rgba(19,31,36,.08);
+}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg-main);color:var(--text-main)}
+body{
+  font-family:"Aptos","Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;
+  user-select:none;
+}
+.capture-mode #topbar{display:none!important}
+.capture-mode #app{height:100vh!important}
+.capture-mode #stage{height:100vh!important}
+.capture-mode #progress{display:none!important}
+.capture-mode .inner{padding-top:76px!important}
+.capture-mode .slide{transition:none!important}
+#app{display:flex;flex-direction:column;height:100%}
+#topbar{
+  height:56px;flex-shrink:0;background:rgba(253,253,253,.92);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 24px;z-index:30
+}
+.logo{
+  font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--primary-brand);text-transform:uppercase;
+  min-width:220px
+}
+.chapters{display:flex;gap:8px;flex:1;overflow:auto}
+.chapter-btn{
+  border:1px solid var(--line);background:#fff;color:var(--text-muted);border-radius:999px;
+  padding:7px 12px;font-size:12px;white-space:nowrap;cursor:pointer;transition:.2s
+}
+.chapter-btn:hover,.chapter-btn.active{border-color:var(--primary-brand);color:var(--primary-brand);background:var(--brand-soft)}
+.counter{font-size:12px;color:var(--text-muted);min-width:60px;text-align:center}
+.fs-btn{
+  border:1px solid var(--line);background:#fff;color:var(--text-muted);border-radius:10px;
+  padding:7px 12px;font-size:12px;cursor:pointer
+}
+#stage{
+  position:relative;flex:1;overflow:hidden;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(0,167,143,.09), transparent 28%),
+    radial-gradient(circle at 88% 14%, rgba(0,102,94,.07), transparent 24%),
+    linear-gradient(180deg, #FEFEFE 0%, #F8FBFA 100%);
+}
+#progress{
+  position:absolute;top:0;left:0;height:4px;width:0;
+  background:linear-gradient(90deg,var(--primary-brand),var(--accent-ai));z-index:10;transition:width .35s ease
+}
+#stage::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(0,102,94,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,102,94,.045) 1px, transparent 1px);
+  background-size:80px 80px;
+}
+.slide{
+  position:absolute;inset:0;opacity:0;pointer-events:none;
+  transform:translateY(20px) scale(.992);
+  transition:opacity .5s ease, transform .55s cubic-bezier(.2,.8,.2,1);
+}
+.slide.active{opacity:1;pointer-events:auto;transform:none}
+.slide.out{opacity:0;transform:translateY(-16px) scale(.995)}
+.inner{
+  position:relative;z-index:1;height:100%;padding:76px 60px 34px;
+  display:flex;flex-direction:column;justify-content:center;gap:20px
+}
+.inner.top{justify-content:flex-start}
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--primary-brand);font-weight:700
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-family:"Aptos Display","Hiragino Mincho ProN","Yu Mincho",serif}
+h1{font-size:56px;line-height:1.08;letter-spacing:-.02em}
+h2{font-size:34px;line-height:1.16}
+h3{font-size:19px;line-height:1.35}
+h1,h2,h3{text-wrap:balance}
+.sub{
+  font-size:16px;line-height:1.8;color:var(--text-muted);max-width:840px
+}
+.sub,.metric-copy,.card p,.service-card p,.panel p,.mini-list li,.bullet-list li,.matrix-note,.footnote,.impact p,.coverage-card li,.talent-points li,.spectrum-note,.compare-box li{text-wrap:pretty}
+.nowrap{white-space:nowrap}
+.hero-tags,.tag-row{display:flex;gap:10px;flex-wrap:wrap}
+.tag{
+  border:1px solid var(--line-strong);background:#fff;padding:8px 14px;border-radius:999px;
+  color:var(--primary-brand);font-size:13px;font-weight:700
+}
+.big-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card,.metric-card,.panel,.matrix-cell,.flow-step,.service-card{
+  background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)
+}
+.card,.service-card,.panel{padding:22px}
+.service-card{position:relative;overflow:hidden}
+.service-card::before{
+  content:"";position:absolute;left:0;top:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--primary-brand),var(--accent-ai))
+}
+.service-header h3{display:flex;align-items:center;gap:10px}
+.service-glyph{
+  width:32px;height:32px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--primary-brand),var(--accent-ai));color:#fff;font-size:11px;font-weight:800;
+  box-shadow:0 10px 18px rgba(0,102,94,.16);letter-spacing:.04em
+}
+.inline-note{font-size:12px;line-height:1.3;color:var(--text-muted);font-weight:600}
+.mini-list.compact li{font-size:13px;line-height:1.45;white-space:nowrap}
+.label{
+  font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ai);margin-bottom:10px
+}
+.card h3,.service-card h3,.panel h3{margin-bottom:10px}
+.card p,.service-card p,.panel p,.mini-list li,.bullet-list li,.matrix-note,.footnote{
+  color:var(--text-muted);font-size:15px;line-height:1.72
+}
+.info-block{display:grid;gap:10px;margin-top:8px}
+.info-row{display:grid;gap:3px}
+.info-key{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-brand);line-height:1.2
+}
+.info-key.alt{color:var(--accent-ai)}
+.info-val{
+  color:var(--text-muted);font-size:14px;line-height:1.55
+}
+.metric-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.summary-row .metric-num{font-size:32px;letter-spacing:-.01em}
+.summary-row .metric-title{font-size:12px}
+.summary-row .metric-copy{font-size:14px;line-height:1.6}
+.metric-card{padding:20px 18px}
+.metric-num{font-size:42px;line-height:1;font-weight:800;color:var(--primary-brand);margin-bottom:8px}
+.metric-title{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--accent-ai);margin-bottom:8px;font-weight:700}
+.metric-copy{font-size:15px;line-height:1.7;color:var(--text-muted)}
+.focus-chip{
+  display:inline-flex;align-items:flex-end;gap:2px;padding:6px 10px;border-radius:999px;background:#EAF8F4;
+  color:var(--primary-brand);font-weight:800;margin-bottom:10px
+}
+.focus-chip .num{font-size:24px;line-height:1}
+.focus-chip .unit{font-size:12px;line-height:1.1;margin-bottom:2px}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+.split-even{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.bullet-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.bullet-list li{
+  position:relative;padding-left:18px
+}
+.bullet-list li::before{
+  content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;
+  background:var(--accent-ai)
+}
+.stat-strip{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);
+  border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow)
+}
+.hero-stat-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;border:none;border-radius:0;background:transparent;box-shadow:none
+}
+.stat{
+  padding:20px 16px;border-right:1px solid var(--line);text-align:center
+}
+.stat:last-child{border-right:none}
+.hero-stat-grid .stat{
+  border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow);
+  padding:14px 15px 12px;text-align:left;min-height:108px
+}
+.hero-stat-grid .stat:last-child{border-right:1px solid var(--line)}
+.stat b{display:block;font-size:27px;color:var(--primary-brand);margin-bottom:4px}
+.stat b .unit,.metric-num .unit,.impact .kpi .unit{
+  font-size:.46em;font-weight:700;margin-left:2px;vertical-align:super;letter-spacing:0
+}
+.stat .label{display:block;font-size:14px;color:var(--text-main);font-weight:700;line-height:1.45}
+.stat small{display:block;font-size:10.5px;color:var(--text-muted);line-height:1.4;margin-top:2px}
+.stat span{font-size:13px;color:var(--text-muted)}
+.service-map{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px
+}
+.service-header{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:16px
+}
+.service-index{
+  width:42px;height:42px;border-radius:14px;background:var(--brand-soft);color:var(--primary-brand);
+  display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;flex-shrink:0
+}
+.mini-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.mini-list li{padding-top:10px;border-top:1px solid var(--line)}
+.mini-list li:first-child{padding-top:0;border-top:none}
+.matrix{
+  display:grid;grid-template-columns:210px repeat(5,1fr);gap:10px
+}
+.matrix-head,.matrix-side,.matrix-cell{
+  min-height:92px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px
+}
+.matrix-head{
+  border-radius:18px;background:var(--primary-brand);color:#fff;font-size:14px;font-weight:700
+}
+.matrix-side{
+  border-radius:18px;background:var(--bg-secondary);border:1px solid var(--line);
+  color:var(--text-main);font-weight:700;padding:18px;justify-content:flex-start
+}
+.matrix-cell{
+  position:relative;font-size:13px;color:var(--text-main);font-weight:700;background:#fff
+}
+.matrix-cell.hit{
+  background:linear-gradient(180deg,#F7FFFD 0%, #EEFCF8 100%);
+  border-color:#B9E5DD
+}
+.matrix-note{font-size:13px}
+.case-stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.case-card{
+  background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:12px
+}
+.case-card.featured,.card.featured{
+  background:
+    linear-gradient(180deg,rgba(0,167,143,.10),rgba(255,255,255,.96)),
+    #fff;
+  border-color:rgba(0,167,143,.48);
+  box-shadow:0 16px 34px rgba(0,102,94,.12);
+}
+.case-card.featured .case-badge,.card.featured .label{
+  background:rgba(0,167,143,.14);
+  color:var(--primary-brand);
+  border:1px solid rgba(0,167,143,.25);
+}
+.case-card.featured h3,.card.featured h3{color:var(--primary-brand)}
+.case-top{display:flex;justify-content:space-between;gap:14px}
+.case-type{
+  font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-ai);font-weight:700
+}
+.case-badge{
+  padding:7px 10px;border-radius:999px;background:var(--accent-soft);color:var(--primary-brand);
+  font-size:12px;font-weight:700;white-space:nowrap
+}
+.impact{
+  padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,var(--primary-brand),#0A8278);
+  color:#fff;min-height:108px
+}
+.case-card > p{flex:1}
+.impact .kpi{font-size:34px;font-weight:800;line-height:1;margin-bottom:8px;display:flex;align-items:flex-end;gap:4px;white-space:nowrap}
+.impact p{color:rgba(255,255,255,.9);font-size:14px;line-height:1.6}
+.impact.compact-impact .kpi{font-size:18px;margin-bottom:6px}
+.impact.no-copy{display:flex;align-items:center}
+.impact.no-copy .kpi{margin-bottom:0}
+.reason-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px
+}
+.reason-group{
+  background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)
+}
+.reason-group .label{margin-bottom:12px}
+.reason-list{display:grid;gap:10px}
+.reason-item{
+  padding:12px 14px;border-radius:16px;background:var(--bg-secondary);border:1px solid var(--line)
+}
+.reason-item strong{
+  display:block;margin-bottom:4px;color:var(--text-main);font-size:14px
+}
+.reason-item span{
+  display:block;color:var(--text-muted);line-height:1.55;font-size:13px
+}
+.map-bottom-note{
+  margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+}
+.map-note-card{
+  padding:16px 18px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)
+}
+.map-note-card h3{margin:8px 0 6px;font-size:18px}
+.map-note-card p{color:var(--text-muted);font-size:13px;line-height:1.6}
+.pku-collab{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:stretch
+}
+.pku-visual{
+  padding:16px;border-radius:24px;background:rgba(255,255,255,.92);border:1px solid var(--line);box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:12px
+}
+.pku-image-slot{
+  width:100%;
+  height:340px;
+  border-radius:18px;
+  border:2px dashed rgba(0,102,94,.28);
+  background:linear-gradient(180deg,rgba(0,102,94,.04),rgba(0,167,143,.03)),#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px
+}
+.pku-image-slot .slot-inner{display:grid;gap:8px}
+.pku-image-slot b{font-size:18px;color:var(--primary-brand)}
+.pku-image-slot span{font-size:12px;line-height:1.6;color:var(--text-muted)}
+.pku-image-slot small{font-size:11px;line-height:1.5;color:var(--text-muted)}
+.pku-visual img{
+  width:100%;height:340px;object-fit:cover;object-position:center top;border-radius:18px;border:1px solid var(--line)
+}
+.pku-caption{
+  font-size:12px;line-height:1.7;color:var(--text-muted)
+}
+.pku-side{
+  display:grid;gap:14px
+}
+.pku-brief{
+  padding:20px;border-radius:22px;background:linear-gradient(135deg,var(--primary-brand),#0A8278);color:#fff;box-shadow:var(--shadow)
+}
+.pku-brief .label{color:rgba(255,255,255,.78)}
+.pku-brief p{color:rgba(255,255,255,.94);font-size:13px;line-height:1.62}
+.pku-pillars{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px
+}
+.pku-pillars .mini-card{padding:16px}
+.pku-pillars .mini-card h3{margin-bottom:6px;font-size:17px}
+.pku-pillars .mini-card p{font-size:12px;line-height:1.52}
+.gif-placeholder{
+  margin-top:18px;
+  border-radius:24px;
+  border:2px dashed rgba(0,102,94,.28);
+  background:
+    linear-gradient(180deg,rgba(0,102,94,.04),rgba(0,167,143,.03)),
+    #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:32px;
+  box-shadow:var(--shadow);
+}
+.gif-placeholder.ratio-a,.gif-placeholder.ratio-b{
+  width:min(100%, 1000px);
+  aspect-ratio:1000 / 800;
+  min-height:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+.gif-placeholder-inner{max-width:640px}
+.gif-placeholder h3{margin-bottom:10px}
+.gif-placeholder p{color:var(--text-muted);line-height:1.7}
+.gif-placeholder .hint{
+  display:inline-flex;
+  margin-top:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--brand-soft);
+  color:var(--primary-brand);
+  font-size:12px;
+  font-weight:700;
+}
+.flow{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch
+}
+.flow-step{padding:20px 16px;position:relative}
+.flow-step.active{
+  background:linear-gradient(180deg,#F5FFFC 0%, #E9FBF6 100%);border-color:#B9E5DD
+}
+.flow-step::after{
+  content:"";position:absolute;right:-9px;top:50%;transform:translateY(-50%);
+  width:18px;height:2px;background:var(--accent-ai)
+}
+.flow-step:last-child::after{display:none}
+.flow-index{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ai);font-weight:700;margin-bottom:10px}
+.flow-step h3{font-size:18px;margin-bottom:10px}
+.chapter-slide{
+  display:flex;align-items:center;justify-content:space-between;gap:40px;height:100%
+}
+.chapter-no{
+  font-size:160px;line-height:.88;font-weight:800;color:rgba(0,102,94,.08);
+  font-family:"Aptos Display","Hiragino Mincho ProN","Yu Mincho",serif
+}
+.chapter-copy{max-width:720px}
+.chapter-inline{
+  display:inline-flex;align-items:center;gap:12px;margin-bottom:8px;
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-brand);font-weight:800
+}
+.chapter-inline .no{
+  width:42px;height:42px;border-radius:12px;background:var(--brand-soft);
+  display:inline-flex;align-items:center;justify-content:center;font-size:18px;letter-spacing:0
+}
+.chapter-inline .name{color:var(--text-muted);font-size:12px;letter-spacing:.16em}
+.coverage-shell{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px
+}
+.coverage-card{padding:22px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.coverage-card ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.coverage-card li{padding-left:18px;position:relative;color:var(--text-muted);font-size:15px;line-height:1.65}
+.coverage-card li::before{
+  content:"";position:absolute;left:0;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--accent-ai)
+}
+.compare{
+  display:grid;grid-template-columns:.82fr 72px 1.18fr;gap:18px;align-items:stretch
+}
+.compare-box{padding:26px;border-radius:24px;box-shadow:var(--shadow)}
+.compare-box.bad{background:#fff;border:1px solid #E4D9D9}
+.compare-box.good{background:linear-gradient(180deg,#F7FFFD 0%, #EEFCF8 100%);border:1px solid #B9E5DD}
+.compare-box h3{margin-bottom:14px}
+.compare-box ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.compare-box li{color:var(--text-muted);font-size:16px;line-height:1.65}
+.compare-box.bad li::before{content:"− ";color:#A26B6B;font-weight:800}
+.compare-box.good li::before{content:"+ ";color:var(--primary-brand);font-weight:800}
+.adv-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+.adv-pill{padding:10px 12px;border-radius:14px;background:#fff;border:1px solid #CBE8E0;text-align:center}
+.adv-pill b{display:block;font-size:22px;color:var(--primary-brand);line-height:1}
+.adv-pill span{display:block;margin-top:4px;font-size:12px;color:var(--text-muted);line-height:1.45}
+.arrow-box{
+  display:flex;align-items:center;justify-content:center;font-size:42px;color:var(--primary-brand);font-weight:800
+}
+.roadmap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.road-step{
+  background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow);position:relative
+}
+.road-step::after{
+  content:"";position:absolute;right:-7px;top:50%;transform:translateY(-50%);width:14px;height:2px;background:var(--accent-ai)
+}
+.road-step:last-child::after{display:none}
+.road-step b{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:10px;background:var(--brand-soft);color:var(--primary-brand);margin-bottom:14px}
+.road-step p{font-size:15px;line-height:1.6;color:var(--text-main);font-weight:700}
+.profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.profile-card{
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:10px
+}
+.profile-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.profile-head{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.avatar{
+  width:62px;height:62px;border-radius:18px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--primary-brand),var(--accent-ai));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:800;letter-spacing:.06em;
+  box-shadow:0 12px 24px rgba(0,102,94,.18)
+}
+.profile-name-wrap{min-width:0}
+.profile-name{font-size:22px;font-weight:800;line-height:1.1}
+.profile-role{font-size:13px;line-height:1.6;color:var(--text-muted);margin-top:6px}
+.profile-meta{
+  margin-top:4px;font-size:11px;line-height:1.5;color:var(--primary-brand);
+  text-transform:uppercase;letter-spacing:.14em;font-weight:700
+}
+.profile-link{
+  text-decoration:none;border:1px solid var(--line-strong);background:var(--brand-soft);color:var(--primary-brand);
+  padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap
+}
+.profile-summary{font-size:14px;line-height:1.7;color:var(--text-muted)}
+.profile-highlight{
+  background:linear-gradient(180deg,#F7FFFD 0%, #EEFCF8 100%);
+  border:1px solid #B9E5DD;border-radius:16px;padding:12px 14px
+}
+.profile-highlight b{
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent-ai);margin-bottom:6px
+}
+.profile-highlight p{font-size:14px;line-height:1.65;color:var(--text-main);font-weight:700}
+.profile-section{display:flex;flex-direction:column;gap:8px}
+.profile-section h4{
+  font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent-ai);font-weight:800
+}
+.profile-points{list-style:none;display:flex;flex-direction:column;gap:8px}
+.profile-points li{position:relative;padding-left:14px;font-size:13px;line-height:1.6;color:var(--text-muted)}
+.profile-points li::before{
+  content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--accent-ai)
+}
+.profile-tags{display:flex;flex-wrap:wrap;gap:8px}
+.profile-tags span{
+  font-size:11px;padding:5px 8px;border-radius:999px;background:var(--bg-secondary);color:var(--primary-brand);font-weight:700
+}
+.metric-row-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.profile-page{
+  margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);
+  padding:18px;display:flex;flex-direction:column;gap:14px
+}
+.profile-page-top{display:grid;grid-template-columns:1.45fr .95fr;gap:16px;align-items:start}
+.profile-hero{
+  background:linear-gradient(180deg,#FAFEFD 0%, #F3FBF8 100%);
+  border:1px solid #CBE8E0;border-radius:18px;padding:16px
+}
+.profile-hero-row{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.profile-title-wrap{display:flex;gap:14px;min-width:0}
+.profile-avatar{
+  width:72px;height:72px;border-radius:22px;flex-shrink:0;background:linear-gradient(135deg,var(--primary-brand),var(--accent-ai));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;letter-spacing:.08em;
+  box-shadow:0 12px 24px rgba(0,102,94,.18)
+}
+.profile-identity h3{font-size:26px;line-height:1.05}
+.profile-identity .kana{font-size:12px;color:var(--text-muted);margin-top:4px;letter-spacing:.12em}
+.profile-identity .role{font-size:14px;color:var(--text-main);font-weight:700;line-height:1.6;margin-top:8px}
+.profile-identity .highlight-title{
+  margin-top:10px;display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;
+  background:#E9F8F4;color:var(--primary-brand);font-size:11px;font-weight:800;letter-spacing:.08em
+}
+.profile-summary-main{margin-top:12px;font-size:14px;line-height:1.75;color:var(--text-main)}
+.profile-summary-main b{color:var(--primary-brand)}
+.profile-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.profile-kpi{background:var(--bg-secondary);border:1px solid var(--line);border-radius:16px;padding:12px 12px 10px}
+.profile-kpi .num{font-size:24px;font-weight:800;color:var(--primary-brand);line-height:1}
+.profile-kpi .cap{font-size:11px;color:var(--text-muted);margin-top:5px;line-height:1.45}
+.profile-side{display:flex;flex-direction:column;gap:12px}
+.profile-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}
+.profile-box h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-ai);font-weight:800;margin-bottom:8px}
+.profile-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.profile-list li{font-size:13px;line-height:1.6;color:var(--text-main)}
+.profile-list li span{color:var(--text-muted)}
+.profile-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.profile-card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff}
+.profile-card h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-ai);font-weight:800;margin-bottom:8px}
+.profile-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.profile-card li{position:relative;padding-left:14px;font-size:13px;line-height:1.6;color:var(--text-main)}
+.profile-card li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--accent-ai)}
+.profile-tags-grid{display:flex;flex-wrap:wrap;gap:8px}
+.profile-tags-grid span{font-size:11px;padding:6px 10px;border-radius:999px;background:#EDF5F3;color:var(--primary-brand);font-weight:700}
+.talent-layout{display:grid;grid-template-columns:.68fr 1.32fr;gap:18px;align-items:stretch;margin-top:16px}
+.talent-panel{
+  background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:18px;
+  height:100%;display:flex;flex-direction:column
+}
+.talent-panel h3{margin-bottom:8px;font-size:18px}
+.talent-points{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.talent-points li{position:relative;padding-left:14px;color:var(--text-muted);font-size:13px;line-height:1.55}
+.talent-points li::before{
+  content:"";position:absolute;left:0;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--accent-ai)
+}
+.talent-metrics{display:grid;grid-template-columns:1fr;gap:8px;margin:12px 0 6px}
+.talent-metric{
+  background:linear-gradient(180deg,#F7FFFD 0%, #EEFCF8 100%);
+  border:1px solid #CBE8E0;border-radius:16px;padding:11px 11px 9px
+}
+.talent-metric b{display:block;font-size:22px;line-height:1;color:var(--primary-brand)}
+.talent-metric span{display:block;margin-top:4px;font-size:11px;line-height:1.4;color:var(--text-muted)}
+.spectrum{
+  background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:20px;
+  height:100%;display:flex;flex-direction:column
+}
+.spectrum-note{margin-top:auto;padding-top:12px}
+.spectrum-head{
+  display:grid;grid-template-columns:150px repeat(5,minmax(0,1fr));gap:8px;margin-bottom:10px
+}
+.spectrum-head div{
+  font-size:11px;color:var(--text-muted);text-align:center;font-weight:700;letter-spacing:.04em
+}
+.spectrum-head div:first-child{text-align:left}
+.spectrum-row{
+  display:grid;grid-template-columns:150px repeat(5,minmax(0,1fr));gap:8px;align-items:center;margin-top:8px
+}
+.spectrum-role{
+  font-size:13px;font-weight:700;color:var(--text-main);line-height:1.45
+}
+.spectrum-cell{
+  height:42px;border-radius:14px;background:var(--bg-secondary);border:1px solid var(--line);position:relative;overflow:hidden
+}
+.spectrum-cell.fill{
+  background:linear-gradient(135deg,var(--primary-brand),var(--accent-ai));border-color:transparent;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)
+}
+.spectrum-cell.soft{
+  background:linear-gradient(180deg,#F7FFFD 0%, #EEFCF8 100%);border-color:#B9E5DD
+}
+.spectrum-note{font-size:12px;color:var(--text-muted);margin-top:12px;line-height:1.6}
+.footer-note{
+  margin-top:auto;display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--text-muted)
+}
+.slide-no{font-weight:700;color:var(--primary-brand)}
+@media (max-width: 1200px){
+  .grid-4,.service-map,.metric-row,.roadmap,.case-stack,.coverage-shell{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .matrix{grid-template-columns:180px repeat(5, minmax(110px,1fr))}
+}
+@media (max-width: 900px){
+  #topbar{padding:0 14px;gap:10px}
+  .logo{min-width:auto}
+  .inner{padding:74px 24px 28px}
+  .big-grid,.split,.split-even,.compare{grid-template-columns:1fr}
+  .grid-3,.service-map,.metric-row,.flow,.roadmap,.case-stack,.coverage-shell{grid-template-columns:1fr}
+  .metric-row-5,.profile-kpis,.profile-columns,.profile-page-top{grid-template-columns:1fr}
+  .talent-layout{grid-template-columns:1fr}
+  .spectrum-head,.spectrum-row{grid-template-columns:120px repeat(5,minmax(0,1fr))}
+  .matrix{grid-template-columns:1fr 1fr}
+  .matrix-head,.matrix-side,.matrix-cell{min-height:72px}
+  .chapter-slide{flex-direction:column;align-items:flex-start;justify-content:center}
+  .chapter-no{font-size:96px}
+  h1{font-size:40px}
+  h2{font-size:28px}
+}
+@media (max-width: 640px){
+  html,body{overflow:hidden}
+  #app{height:100dvh}
+  #topbar{
+    height:auto;min-height:56px;padding:10px 12px;gap:8px;
+    align-items:flex-start;flex-wrap:wrap
+  }
+  .logo{width:100%;min-width:0;font-size:11px;letter-spacing:.14em}
+  .chapters{
+    order:3;flex:0 0 100%;overflow-x:auto;overflow-y:hidden;
+    padding-bottom:2px;-webkit-overflow-scrolling:touch
+  }
+  .counter,.fs-btn{margin-left:auto}
+  .chapter-btn{padding:7px 10px;font-size:11px}
+  #stage{
+    height:calc(100dvh - 92px);
+    overflow:hidden;
+    touch-action:pan-y
+  }
+  .slide{
+    height:100%;
+    min-height:0
+  }
+  .inner{
+    height:100%;
+    max-height:100%;
+    min-height:0;
+    padding:96px 16px 18px;
+    gap:14px;
+    justify-content:flex-start;
+    overflow-y:auto;
+    overflow-x:hidden;
+    touch-action:pan-y;
+    -webkit-overflow-scrolling:touch
+  }
+  .inner.cover{align-items:flex-start;text-align:left}
+  .eyebrow{font-size:10px;letter-spacing:.18em;gap:8px}
+  .eyebrow::before{width:18px}
+  h1{font-size:30px;line-height:1.14}
+  h2{font-size:22px;line-height:1.2}
+  h3{font-size:16px;line-height:1.35}
+  .sub,.card p,.service-card p,.panel p,.mini-list li,.bullet-list li,.matrix-note,.footnote,.impact p,.coverage-card li,.talent-points li,.spectrum-note,.compare-box li{
+    font-size:13px;line-height:1.55
+  }
+  .metric-row,.grid-4,.grid-3,.service-map,.case-stack,.coverage-shell,.flow,.roadmap,.big-grid,.split,.split-even,.compare,.profile-columns,.profile-page-top,.profile-kpis,.talent-layout,.reason-grid,.map-bottom-note,.pku-collab,.pku-pillars{
+    grid-template-columns:1fr !important
+  }
+  .stat-strip.hero-stat-grid{grid-template-columns:1fr}
+  .hero-stat-grid .stat{min-height:auto;padding:12px 12px 10px}
+  .metric-card,.card,.service-card,.panel,.case-card,.coverage-card,.profile-page,.talent-panel,.spectrum,.road-step,.flow-step{padding:14px}
+  .profile-page{gap:8px}
+  .profile-title-wrap{gap:10px}
+  .profile-avatar{width:58px;height:58px;border-radius:18px;font-size:20px}
+  .profile-identity h3{font-size:22px}
+  .profile-identity .role{font-size:13px}
+  .profile-summary-main{font-size:12px;line-height:1.55}
+  .profile-card li,.profile-list li{font-size:12px;line-height:1.5}
+  .profile-tags-grid span,.profile-tags span{font-size:10px;padding:5px 7px}
+  .matrix{
+    grid-template-columns:1fr !important;
+    gap:8px
+  }
+  .matrix-head,.matrix-side,.matrix-cell{
+    min-height:auto;
+    justify-content:flex-start;
+    text-align:left;
+    padding:12px 14px
+  }
+  .spectrum-head,.spectrum-row{
+    grid-template-columns:92px repeat(5,minmax(0,1fr));
+    gap:6px
+  }
+  .spectrum-cell{height:34px;border-radius:10px}
+  .flow-step::after,.road-step::after{display:none}
+  .footer-note{font-size:10px;gap:10px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="topbar">
+    <div class="logo">InnoSysTech AI Business Deck</div>
+    <div class="chapters">
+      <button class="chapter-btn active" data-jump="0">表紙</button>
+      <button class="chapter-btn" data-jump="3">保険</button>
+      <button class="chapter-btn" data-jump="7">会社能力</button>
+      <button class="chapter-btn" data-jump="11">人材</button>
+      <button class="chapter-btn" data-jump="19">AI案件</button>
+      <button class="chapter-btn" data-jump="30">結び</button>
+    </div>
+    <div class="counter" id="counter">1 / 32</div>
+    <button class="fs-btn" id="fsBtn">Full</button>
+  </div>
+  <div id="stage">
+    <div id="progress"></div>
+
+    <section class="slide active" data-chapter="0">
+      <div class="inner">
+        <div class="eyebrow">提案資料</div>
+        <h1>InnoSysTech株式会社<br>AI事業・実績紹介</h1>
+        <p class="sub"><span class="nowrap">AI Application</span>、<span class="nowrap">AI Agent</span>、<span class="nowrap">ASC</span>、<span class="nowrap">Embodied AI</span> を一体で提供し、保険・金融を含む業務へ実装できる会社として位置づける。</p>
+        <div class="stat-strip hero-stat-grid">
+          <div class="stat">
+            <b>85<span class="unit">%</span></b>
+            <span class="label">顧客対応自動化率</span>
+            <small>コールセンター音声認識、保険推奨、製品検査での対応自動化率</small>
+          </div>
+          <div class="stat">
+            <b>95<span class="unit">%+</span></b>
+            <span class="label">AI認識精度</span>
+            <small>独自「3路リコールRAG」でベクトル検索・知識グラフ・DBを同時参照</small>
+          </div>
+          <div class="stat">
+            <b>20<span class="unit">年</span></b>
+            <span class="label">日本市場での信頼実績</span>
+            <small>日本・マレーシアに現地法人</small>
+          </div>
+          <div class="stat">
+            <b>85<span class="unit">%</span></b>
+            <span class="label">開発効率改善</span>
+            <small>手動修正箇所を特定し、AI駆動修正により工数を削減</small>
+          </div>
+        </div>
+        <div class="footer-note"><span>Executive proposal base deck</span><span class="slide-no">01</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="0">
+      <div class="inner top">
+        <div class="eyebrow">エグゼクティブサマリー</div>
+        <h2>AIを構想で終わらせず、<br>現場実装まで仕上げる</h2>
+        <p class="sub">最初に伝えるべき結論を 4 点に絞る。ISTの主戦場はAI事業であり、業務理解、実装、保守まで含めて一気通貫で支援できる。</p>
+        <div class="metric-row summary-row">
+          <div class="metric-card">
+            <div class="metric-title">信頼基盤</div>
+            <div class="metric-num">日本市場</div>
+            <div class="metric-copy">20年にわたり培った信頼関係を前提に、提案から実装まで安定して推進できる。</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-title">橋渡し力</div>
+            <div class="metric-num">日中連携</div>
+            <div class="metric-copy">日本側の要件と中国側の先端技術・開発力をつなぎ、現場で利用できる製品・サービスへ完成させる。</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-title">業務起点</div>
+            <div class="metric-num">保険深耕</div>
+            <div class="metric-copy">保険・金融の業務構造を踏まえ、AI適用対象と導入優先順位をコンサルできる。</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-title">成果実装</div>
+            <div class="metric-num">価値定着</div>
+            <div class="metric-copy">AIを構想やPoCで終わらせず、業務成果として定着するところまで支援できる。</div>
+          </div>
+        </div>
+        <p class="sub" style="font-size:14px;max-width:none">実績値として、顧客対応自動化率 85%、AI認識精度 95%+、開発効率改善 85% を確認している。</p>
+        <div class="footer-note"><span>What IST is</span><span class="slide-no">02</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="0">
+      <div class="inner top">
+        <div class="eyebrow">本資料の構成</div>
+        <h2>本資料の構成</h2>
+        <div class="big-grid">
+          <div class="service-card"><div class="label">01</div><h3>保険業務理解・対応領域</h3><p>先ず保険業務の全体像と対応可能領域を示し、AIを提案する範囲を明確にする。</p></div>
+          <div class="service-card"><div class="label">02</div><h3>AI事業・会社能力</h3><p>4つのAIサービスライン、信頼基盤、実装体制を示し、ISTの提供価値を定義する。</p></div>
+          <div class="service-card"><div class="label">03</div><h3>北京大学との協業</h3><p>代表人材の紹介</p></div>
+          <div class="service-card"><div class="label">04</div><h3>AI案件実績</h3><p>AI Application、AI Agent、ASC、Embodied AI の実例を整理し、業務理解が実装へつながることを示す。</p></div>
+        </div>
+        <div class="footer-note"><span>From conclusion to evidence</span><span class="slide-no">03</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="1">
+      <div class="inner">
+        <div class="chapter-slide">
+          <div class="chapter-no">01</div>
+          <div class="chapter-copy">
+            <div class="eyebrow">Insurance Coverage</div>
+            <h1>保険業務の現在対応領域</h1>
+            <p class="sub">新契約、保全、数理、保険金、手数料、販売支援、チャネル、接続基盤まで保険業務全般を面で理解している強みを生かして、AI提案と実装を行う。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>Section opener</span><span class="slide-no">04</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="1">
+      <div class="inner top">
+        <div class="eyebrow">Insurance Business Coverage</div>
+        <h2>保険業務総覧</h2>
+        <div class="coverage-shell">
+          <div class="coverage-card">
+            <div class="label">Core Operations</div>
+            <h3>契約ライフサイクル</h3>
+            <ul>
+              <li>新契約</li>
+              <li>保全</li>
+              <li>保険金</li>
+              <li>数理</li>
+            </ul>
+          </div>
+          <div class="coverage-card">
+            <div class="label">Sales & Service</div>
+            <h3>営業・顧客接点</h3>
+            <ul>
+              <li>募集支援</li>
+              <li>販売支援</li>
+              <li>団体ポータル</li>
+              <li>銀行窓販</li>
+            </ul>
+          </div>
+          <div class="coverage-card">
+            <div class="label">Platform</div>
+            <h3>接続・運用基盤</h3>
+            <ul>
+              <li>チャネル</li>
+              <li>外部接続</li>
+              <li>データ流通</li>
+              <li>安定運用</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-note"><span>Insurance coverage map</span><span class="slide-no">05</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="1">
+      <div class="inner top">
+        <div class="eyebrow">Lifecycle Front</div>
+        <h2>新契約・保全</h2>
+        <p class="sub">顧客接点と契約維持に関する現在対応領域。AI-OCR、Agent、データ活用との相関性が高く、顧客接点品質と事務効率の両立が問われる。</p>
+        <div class="flow">
+          <div class="flow-step"><div class="flow-index">Step 01</div><h3>申込受付</h3><p>紙、Web、窓口データの受領と初期整備。</p></div>
+          <div class="flow-step"><div class="flow-index">Step 02</div><h3>引受審査</h3><p>条件照合、不備確認、補助判断。</p></div>
+          <div class="flow-step"><div class="flow-index">Step 03</div><h3>契約成立</h3><p>承諾、登録、証券発行。</p></div>
+          <div class="flow-step"><div class="flow-index">Step 04</div><h3>保全</h3><p>契約変更、照会、通知、継続サポート。</p></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">AI-OCR</span>
+          <span class="tag">不備検知</span>
+          <span class="tag">説明Agent</span>
+          <span class="tag">データ活用</span>
+        </div>
+        <div class="footer-note"><span>Front lifecycle</span><span class="slide-no">06</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="1">
+      <div class="inner top">
+        <div class="eyebrow">Core Operations</div>
+        <h2>保険金・数理・周辺チャネル</h2>
+        <div class="split">
+          <div class="panel">
+            <div class="label">Claims & Actuarial</div>
+            <h3>中核業務への理解</h3>
+            <ul class="bullet-list">
+              <li>保険金: 請求受付、査定、支払、照会対応</li>
+              <li>数理: 保険料計算、将来支払予測、健全性管理、統計報告</li>
+              <li>正確性、公平性、説明責任が最重要</li>
+              <li>AI導入時にも業務ルール理解が前提になる</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">Channels & Platform</div>
+            <h3>外部接点と基盤領域</h3>
+            <ul class="bullet-list">
+              <li>募集支援 / 販売支援: 営業DXと提案力向上</li>
+              <li>団体ポータル: BtoBtoE 接点</li>
+              <li>銀行窓販: 金融機関連携とコンプライアンス</li>
+              <li>チャネル: 外部接続、データ流通、安定運用</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-note"><span>Core business understanding</span><span class="slide-no">07</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="2">
+      <div class="inner">
+        <div class="chapter-slide">
+          <div class="chapter-no">02</div>
+          <div class="chapter-copy">
+            <div class="eyebrow">第2部</div>
+            <h1>AI事業・会社能力</h1>
+            <p class="sub">保険業務理解を前提に、それをAI実装へ落とし込むことができる。4つのAIサービスライン、信頼基盤、実装体制を通じて提供できる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>Section opener</span><span class="slide-no">08</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="2">
+      <div class="inner top">
+        <div class="eyebrow">AI Business Portfolio</div>
+        <h2>AI事業全体像</h2>
+        <p class="sub">ISTのAI事業は以下の４つのサービスラインがあります。</p>
+        <div class="service-map">
+          <div class="service-card"><div class="service-header"><h3><span class="service-glyph">APP</span>AI Application</h3><div class="service-index">01</div></div><ul class="mini-list compact"><li>RAG / OCR / 音声 / RPA</li><li>業務フローに直接入るAI実装</li><li>保険・金融・物流・製造に横展開</li></ul></div>
+          <div class="service-card"><div class="service-header"><h3><span class="service-glyph">AGT</span>AI Agent</h3><div class="service-index">02</div></div><ul class="mini-list compact"><li>Insurance Agent から Multi-Agent まで対応</li><li>判断・収集・生成を業務単位で自律化</li><li>RAG、ルール、外部連携を組み合わせて実装</li></ul></div>
+          <div class="service-card"><div class="service-header"><h3><span class="service-glyph">ASC</span>ASC <span class="inline-note">（Agentic Software Creation）</span></h3><div class="service-index">03</div></div><ul class="mini-list compact"><li>開発・保守・改善・モダナイゼーションを高度化</li><li>金融・保険のレガシー課題への現実解</li><li>AI駆動開発ラインとして提供</li></ul></div>
+          <div class="service-card"><div class="service-header"><h3><span class="service-glyph">BOT</span>Embodied AI / Robot</h3><div class="service-index">04</div></div><ul class="mini-list compact"><li>ロボットプラットフォーム上での二次開発</li><li>Physical Workflow へAIを拡張</li><li>現場空間へ事業を広げる</li></ul></div>
+        </div>
+        <div class="footer-note"><span>Service-led structure</span><span class="slide-no">04</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="2">
+      <div class="inner top">
+        <div class="eyebrow">サービスライン</div>
+        <h2>4つのAIサービスラインの役割分担</h2>
+        <div class="grid-4">
+          <div class="card"><div class="label">AI Application</div><h3>業務フロー実装</h3><p>文書、知識、顧客接点、帳票処理にAIを実装し、既存業務へ接続する役割を担う。</p></div>
+          <div class="card"><div class="label">AI Agent</div><h3>判断・収集・生成</h3><p>問い合わせ、審査、調査、レポート生成を自律化し、業務判断を支援する役割を担う。</p></div>
+          <div class="card"><div class="label">ASC</div><h3>開発・保守高度化</h3><p>コード修正、テスト、CI/CD、設計回復を高度化し、内部実装力を押し上げる役割を担う。</p></div>
+          <div class="card"><div class="label">Embodied AI / Robot</div><h3>現場ワークフロー拡張</h3><p>ロボットプラットフォーム上での二次開発を通じて、デジタル空間のAIを物理空間へ広げる役割を担う。</p></div>
+        </div>
+        <div class="footer-note"><span>What each line means</span><span class="slide-no">05</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="2">
+      <div class="inner top">
+        <div class="eyebrow">信頼の理由</div>
+        <h2>信頼できる理由</h2>
+        <div class="reason-grid">
+          <div class="reason-group">
+            <div class="label">信頼基盤とブリッジ力</div>
+            <div class="reason-list">
+              <div class="reason-item">
+                <strong>20年の日本市場接点</strong>
+                <span>長期的な信頼関係を前提に、提案から導入までを安定して推進できる。</span>
+              </div>
+              <div class="reason-item">
+                <strong>日中ブリッジ実行力</strong>
+                <span>日本側の規制・文化・業務要件と、中国側の先端技術・開発力をつなげる。</span>
+              </div>
+              <div class="reason-item">
+                <strong>保険業務理解を起点化</strong>
+                <span>新契約、保全、保険金、数理の理解を前提に、AI適用対象を具体化できる。</span>
+              </div>
+              <div class="reason-item">
+                <strong>現場で通用する成果物へ変換</strong>
+                <span>単なる構想ではなく、日本の現場運用に合う仕様・画面・フローへ落とし込む。</span>
+              </div>
+            </div>
+          </div>
+          <div class="reason-group">
+            <div class="label">実装体制と裏付け</div>
+            <div class="reason-list">
+              <div class="reason-item">
+                <strong>規制対応を前提に設計</strong>
+                <span>閉域構成、権限管理、監査証跡を前提にした金融向け実装が可能。</span>
+              </div>
+              <div class="reason-item">
+                <strong>複数実装方式に対応</strong>
+                <span>オンプレミス、クラウド、ハイブリッドを使い分けて本番運用へ接続する。</span>
+              </div>
+              <div class="reason-item">
+                <strong>AIを価値定着まで伴走</strong>
+                <span>説明責任、コンプライアンス、安定運用を含めてAI導入を定着させる。</span>
+              </div>
+              <div class="reason-item">
+                <strong>特許・受賞・資格で裏付け</strong>
+                <span>技術力は実績だけでなく、知財・受賞・専門資格でも継続的に証明している。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Capability proof matters</span><span class="slide-no">06</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner">
+        <div class="chapter-slide">
+          <div class="chapter-no">03</div>
+          <div class="chapter-copy">
+            <div class="eyebrow">第3部</div>
+            <h1>北京大学との協業</h1>
+            <p class="sub">代表人材の紹介</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>Section opener</span><span class="slide-no">12</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner top">
+        <div class="eyebrow">人材構成</div>
+        <h2>人材構成</h2>
+        <p class="sub">提案、構想、アーキテクチャ設計、AI実装、画面開発、運用までを役割分担でカバーし、日本要件を実装へ正確に接続する。</p>
+        <div class="talent-layout">
+          <div class="talent-panel">
+            <div class="label">Bridge Team</div>
+            <h3>構想から運用までを切れ目なくつなぐ</h3>
+            <p>ISTの強みは人数の多さではなく、構想段階から実装・運用までを切れ目なく橋渡しできる点にある。</p>
+            <div class="talent-metrics">
+              <div class="talent-metric"><b>300＋</b><span>協力会社を含めると最大500名まで動員可能です。</span></div>
+            </div>
+            <ul class="talent-points">
+              <li>CTO / AI PM が全体方針と品質を統括</li>
+              <li>Solution Architect が業務要件をAI要件へ分解</li>
+              <li>System Architect / LLM Engineer が基盤設計と実装を担う</li>
+              <li>PD / Full-stack が画面、API、運用接続を仕上げる</li>
+            </ul>
+          </div>
+          <div class="spectrum">
+            <div class="label">Role Spectrum</div>
+            <div class="spectrum-head">
+              <div></div>
+              <div>構想</div>
+              <div>要件定義</div>
+              <div>AI設計</div>
+              <div>実装</div>
+              <div>運用定着</div>
+            </div>
+            <div class="spectrum-row">
+              <div class="spectrum-role">CTO / AI PM</div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell soft"></div>
+              <div class="spectrum-cell"></div>
+              <div class="spectrum-cell soft"></div>
+            </div>
+            <div class="spectrum-row">
+              <div class="spectrum-role">Solution Architect</div>
+              <div class="spectrum-cell soft"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell soft"></div>
+              <div class="spectrum-cell"></div>
+            </div>
+            <div class="spectrum-row">
+              <div class="spectrum-role">System Architect</div>
+              <div class="spectrum-cell"></div>
+              <div class="spectrum-cell soft"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell soft"></div>
+            </div>
+            <div class="spectrum-row">
+              <div class="spectrum-role">LLM Engineer</div>
+              <div class="spectrum-cell"></div>
+              <div class="spectrum-cell"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell soft"></div>
+            </div>
+            <div class="spectrum-row">
+              <div class="spectrum-role">PD / UX / Full-stack</div>
+              <div class="spectrum-cell"></div>
+              <div class="spectrum-cell soft"></div>
+              <div class="spectrum-cell soft"></div>
+              <div class="spectrum-cell fill"></div>
+              <div class="spectrum-cell fill"></div>
+            </div>
+            <div class="spectrum-note">濃色は主担当、淡色は連携領域を示す。日本側の業務要件を、AI設計・実装・運用へ段階的に受け渡せる体制を可視化している。</div>
+          </div>
+        </div>
+        <div class="footer-note"><span>People and delivery</span><span class="slide-no">07</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner top">
+        <div class="eyebrow">代表人材</div>
+        <h2>代表人材プロフィール | 李 萌</h2>
+        <div class="profile-page">
+          <div class="profile-page-top">
+            <div class="profile-hero">
+              <div class="profile-hero-row">
+                <div class="profile-title-wrap">
+                  <div class="profile-avatar">LM</div>
+                  <div class="profile-identity">
+                    <h3>李 萌</h3>
+                    <div class="kana">リ モン</div>
+                    <div class="role">AI戦略 / プロダクト / 事業統括</div>
+                    <div class="highlight-title">学術・事業統括背景</div>
+                  </div>
+                </div>
+                <a class="profile-link" href="../04.人材Lib（履歴書）/CV%20李萌%20日本語.html" target="_blank" rel="noopener noreferrer">原稿参照</a>
+              </div>
+              <p class="profile-summary-main"><b>北京大学 理学博士</b>、浙江大学ポストドクトラル研究員、清華大学・武漢大学研究機関の副センター長を兼任。<b>学術・事業・技術を横断</b>し、AI戦略からプロダクト実装、市場投入まで一貫して統括できるリーダー。</p>
+            </div>
+            <div class="profile-side">
+              <div class="profile-box">
+                <h4>主要指標</h4>
+                <div class="profile-kpis">
+                  <div class="profile-kpi"><div class="num">15年+</div><div class="cap">AI・ソフトウェア領域の研究開発・事業経験</div></div>
+                  <div class="profile-kpi"><div class="num">10年+</div><div class="cap">創業者・CEOとしてのチーム統括経験</div></div>
+                  <div class="profile-kpi"><div class="num">3社</div><div class="cap">創業・経営したAI関連企業</div></div>
+                  <div class="profile-kpi"><div class="num">2件</div><div class="cap">特許 / 学術論文10本以上</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-columns">
+            <div class="profile-card">
+              <h4>学術・統括背景</h4>
+              <ul>
+                <li>北京大学 理学博士（CS）、AI・NLP・知識工学を専門とする</li>
+                <li>浙江大学 計算機学院でポストドクトラル研究員として研究に従事</li>
+                <li>清華大学 長三角研究院 / 武漢大学 蘇州研究院で副センター長を兼任</li>
+                <li>中国科学技術部の重点R&Dプロジェクトで中核技術責任者を担当</li>
+              </ul>
+            </div>
+            <div class="profile-card">
+              <h4>事業構築実績</h4>
+              <ul>
+                <li>AI Software Platform、Growth Intelligence、Healthcare Tech の3領域で創業経験</li>
+                <li>AnyBuilder、企業向けAI業務アプリ、ナレッジ管理基盤などを企画・市場投入</li>
+                <li>医療リソース管理プロダクトでは事業成長後にM&A Exitを実現</li>
+                <li>金融・保険業務のAI戦略を構想し、製品仕様へ落とし込む力を持つ</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-card">
+            <h4>専門領域</h4>
+            <div class="profile-tags-grid">
+              <span>AI戦略・事業設計</span><span>プロダクト統括</span><span>チームマネジメント</span><span>NLP / 知識工学</span><span>データマイニング</span><span>情報検索</span><span>エンタープライズAI</span><span>金融・保険適用</span><span>英語ビジネス流暢</span><span>日本語技術文書対応</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Core member profile</span><span class="slide-no">08</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner top">
+        <div class="eyebrow">北京大学協業</div>
+        <h2>北京大学との協業プロダクト</h2>
+        <p class="sub">北京大学の研究成果を製品・サービス体系として整理した「第三世代ソフトウェア工場」を、ISTが日本企業向けに実装・導入できる形へ接続する。</p>
+        <div class="pku-collab">
+          <div class="pku-visual">
+            <div class="pku-image-slot">
+              <div class="slot-inner">
+                <b>実際製品画像 挿入エリア</b>
+                <span>北京大学との協業プロダクト画像をここに配置</span>
+                <small>現在の表示領域: 340px 高 / 横幅可変</small>
+              </div>
+            </div>
+            <div class="pku-caption">北京大学資料に含まれる実際の製品画面。単なる研究紹介ではなく、製品・交付モデルとして整理済みであることを示している。</div>
+          </div>
+          <div class="pku-side">
+            <div class="pku-brief">
+              <div class="label">Collaboration Thesis</div>
+              <p><b>ISTは北京大学の研究成果を、日本企業で使える製品・交付形態へ翻訳する実装パートナーです。</b> ツール単体ではなく、プロセス・人材・導入まで含めた再利用可能な形で協業価値を提供します。</p>
+            </div>
+            <div class="pku-pillars">
+              <div class="mini-card">
+                <div class="label">製品体系</div>
+                <h3>ツール</h3>
+                <p>業務要件をより早くシステム原型・アプリケーションへ接続する。</p>
+              </div>
+              <div class="mini-card">
+                <div class="label">導入体系</div>
+                <h3>交付</h3>
+                <p>開発、テスト、改修のサイクルを短縮し、保守効率向上とコスト低減につなげる。</p>
+              </div>
+              <div class="mini-card">
+                <div class="label">協業体制</div>
+                <h3>人材</h3>
+                <p>非エンジニア部門も要件確認に参加しやすい形で協業できる。</p>
+              </div>
+              <div class="mini-card">
+                <div class="label">再利用性</div>
+                <h3>プロセス</h3>
+                <p>別案件・別部門でも繰り返し活用できる標準化を前提とする。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>PKU collaboration product</span><span class="slide-no">09</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner top">
+        <div class="eyebrow">代表人材</div>
+        <h2>代表人材プロフィール | 曲 帥</h2>
+        <div class="profile-page">
+          <div class="profile-page-top">
+            <div class="profile-hero">
+              <div class="profile-hero-row">
+                <div class="profile-title-wrap">
+                  <div class="profile-avatar">QS</div>
+                  <div class="profile-identity">
+                    <h3>曲 帥</h3>
+                    <div class="kana">キョク スイ</div>
+                    <div class="role">AI事業 プロジェクトディレクター</div>
+                    <div class="highlight-title">資格・実務経験</div>
+                  </div>
+                </div>
+                <a class="profile-link" href="../04.人材Lib（履歴書）/CV%20曲帥%20日本語.html" target="_blank" rel="noopener noreferrer">原稿参照</a>
+              </div>
+              <p class="profile-summary-main"><b>日本向けプロジェクト20年</b>、2016〜2017年の日本駐在経験、<b>累計1,000人月超の大規模案件統括</b>を持つディレクター。日本語での直接折衝、要件定義、品質統制までカバーし、AI技術を業務変革へ接続する。</p>
+            </div>
+            <div class="profile-side">
+              <div class="profile-box">
+                <h4>主要指標</h4>
+                <div class="profile-kpis">
+                  <div class="profile-kpi"><div class="num">20年</div><div class="cap">日本向けプロジェクト経験</div></div>
+                  <div class="profile-kpi"><div class="num">1,000人月+</div><div class="cap">累計マネジメント規模</div></div>
+                  <div class="profile-kpi"><div class="num">2件</div><div class="cap">AI関連 発明特許</div></div>
+                  <div class="profile-kpi"><div class="num">4本</div><div class="cap">学術論文 / MIIT上級資格</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-columns">
+            <div class="profile-card">
+              <h4>資格・デリバリー実績</h4>
+              <ul>
+                <li>AI大規模言語モデル 上級R&Dエンジニア（中国工業情報化部認定）</li>
+                <li>AI関連の発明特許2件、学術論文4件の技術バックグラウンドを保有</li>
+                <li>日本語ビジネス上級、英語は技術文書の読解・作成に対応</li>
+                <li>日本大手企業向けに構想策定、要件定義、デリバリー統括を実施</li>
+              </ul>
+            </div>
+            <div class="profile-card">
+              <h4>代表案件</h4>
+              <ul>
+                <li>保険会社向け AIエージェント基盤構築で、保険商品レコメンドと約款Q&amp;A基盤を統括</li>
+                <li>AI文書処理基盤構築で、PoCから基幹接続・教育まで全フェーズを管理</li>
+                <li>CBRE向けマルチAgent不動産分析プラットフォームをディレクション</li>
+                <li>大規模案件のリスク管理、品質統制、ステークホルダー調整を主導</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-card">
+            <h4>専門領域</h4>
+            <div class="profile-tags-grid">
+              <span>AIプロジェクト統括</span><span>大規模PJ管理</span><span>チームマネジメント</span><span>要件定義・顧客折衝</span><span>LLM / RAG / Agent</span><span>ServiceNow</span><span>Java / .NET / Python</span><span>Oracle / PostgreSQL</span><span>金融・保険領域</span><span>日本語上級PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Core member profile</span><span class="slide-no">09</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner top">
+        <div class="eyebrow">代表人材</div>
+        <h2>代表人材プロフィール | 張 宝晶</h2>
+        <div class="profile-page">
+          <div class="profile-page-top">
+            <div class="profile-hero">
+              <div class="profile-hero-row">
+                <div class="profile-title-wrap">
+                  <div class="profile-avatar">ZB</div>
+                  <div class="profile-identity">
+                    <h3>張 宝晶</h3>
+                    <div class="kana">チョウ ホウショウ</div>
+                    <div class="role">保険業務 × AIソリューション シニアプロジェクトマネージャー</div>
+                    <div class="highlight-title">保険業務 × AI構想推進</div>
+                  </div>
+                </div>
+                <a class="profile-link" href="../04.人材Lib（履歴書）/CV%20張宝晶%20日本語.html" target="_blank" rel="noopener noreferrer">原稿参照</a>
+              </div>
+              <p class="profile-summary-main"><b>IT領域20年、保険業務領域10年以上</b>の経験を持ち、保険の現場課題をAI活用・業務改革へ接続できるシニアPM。<b>日本語N1</b>での顧客折衝と、最大20名規模のチーム推進を両立できる。</p>
+            </div>
+            <div class="profile-side">
+              <div class="profile-box">
+                <h4>主要指標</h4>
+                <div class="profile-kpis">
+                  <div class="profile-kpi"><div class="num">20年</div><div class="cap">IT / システム開発経験</div></div>
+                  <div class="profile-kpi"><div class="num">10年+</div><div class="cap">保険業務領域経験</div></div>
+                  <div class="profile-kpi"><div class="num">N1</div><div class="cap">日本語 顧客折衝対応</div></div>
+                  <div class="profile-kpi"><div class="num">20名</div><div class="cap">最大チーム管理規模</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-columns">
+            <div class="profile-card">
+              <h4>業務・推進領域</h4>
+              <ul>
+                <li>保険契約管理、保全、保険金、周辺業務における業務分析・改善推進</li>
+                <li>日本語N1での直接折衝、要件定義、課題整理、提案、導入推進に対応</li>
+                <li>最大20名規模のチームを率い、品質・進捗・関係者調整を安定推進</li>
+                <li>生成AI、RAG、AI Agent を業務効率化・コスト削減案へ具体化できる</li>
+              </ul>
+            </div>
+            <div class="profile-card">
+              <h4>代表案件</h4>
+              <ul>
+                <li>保険会社向け契約・照会業務AI支援基盤で、構想策定から要件整理までを主導</li>
+                <li>保険基幹・周辺システム刷新で、契約管理・保全業務を中心に全工程を推進</li>
+                <li>保険金支払業務改善で、査定・支払フローの可視化と改善提案を主導</li>
+                <li>保険業務効率化に向けた生成AI活用企画で、適用優先順位と改善案を整理</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-card">
+            <h4>専門領域</h4>
+            <div class="profile-tags-grid">
+              <span>保険業務改革</span><span>AI活用構想</span><span>日本語N1</span><span>顧客折衝</span><span>要件定義</span><span>チームマネジメント</span><span>LLM / 生成AI</span><span>RAG</span><span>AI Agent</span><span>Java / .NET / SQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Core member profile</span><span class="slide-no">11</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner top">
+        <div class="eyebrow">代表人材</div>
+        <h2>代表人材プロフィール | 李 澤炀</h2>
+        <div class="profile-page">
+          <div class="profile-page-top">
+            <div class="profile-hero">
+              <div class="profile-hero-row">
+                <div class="profile-title-wrap">
+                  <div class="profile-avatar">LZ</div>
+                  <div class="profile-identity">
+                    <h3>李 澤炀</h3>
+                    <div class="kana">リ ゾーヤン</div>
+                    <div class="role">LLM / RAG / マルチAgent AIアーキテクト</div>
+                    <div class="highlight-title">技術実装力</div>
+                  </div>
+                </div>
+                <a class="profile-link" href="../04.人材Lib（履歴書）/CV%20李澤炀%20日本語.html" target="_blank" rel="noopener noreferrer">原稿参照</a>
+              </div>
+              <p class="profile-summary-main"><b>LLM・RAG・GraphRAG・マルチAgent</b>を実案件で設計・実装できるアーキテクト。<b>中国特許4件出願</b>と論文実績を持ち、日本向け案件でのAIアーキテクチャ設計・技術推進を担う。</p>
+            </div>
+            <div class="profile-side">
+              <div class="profile-box">
+                <h4>主要指標</h4>
+                <div class="profile-kpis">
+                  <div class="profile-kpi"><div class="num">4件</div><div class="cap">中国特許出願</div></div>
+                  <div class="profile-kpi"><div class="num">3年</div><div class="cap">日本向けプロジェクト参画</div></div>
+                  <div class="profile-kpi"><div class="num">4領域</div><div class="cap">LLM / RAG / Agent / Multimodal</div></div>
+                  <div class="profile-kpi"><div class="num">上級</div><div class="cap">LLM R&amp;Dエンジニア資格</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-columns">
+            <div class="profile-card">
+              <h4>技術実装領域</h4>
+              <ul>
+                <li>RAG、GraphRAG、Neo4j、Hybrid Search を組み合わせた知識基盤設計</li>
+                <li>Multi-Agent、Tool Calling、Agent Memory による業務フロー実装</li>
+                <li>OCR + Layout + LLM を用いたマルチモーダル文書解析基盤の構築</li>
+                <li>GPT-4o、Claude、Qwen、DeepSeek など複数LLMの適材適所設計</li>
+              </ul>
+            </div>
+            <div class="profile-card">
+              <h4>代表案件</h4>
+              <ul>
+                <li>AI通関書類自動解析基盤で、メール監視から関務API連携までE2E設計</li>
+                <li>CBRE向けマルチAgent不動産分析プラットフォームでタスク分解と協調実行を設計</li>
+                <li>金融コンプライアンスPFで、ドメインLLM + RAG により専門QA精度を向上</li>
+                <li>FAW-Volkswagen向け GraphRAG 知識Q&amp;A基盤で多段推論を実装</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-card">
+            <h4>専門領域</h4>
+            <div class="profile-tags-grid">
+              <span>LLM / 生成AI</span><span>RAG / GraphRAG</span><span>マルチAgent</span><span>マルチモーダルAI</span><span>知識グラフ / Neo4j</span><span>OCR / IDP</span><span>Python / API開発</span><span>Prompt Engineering</span><span>日英技術文書対応</span><span>金融・保険適用</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Core member profile</span><span class="slide-no">10</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="3">
+      <div class="inner top">
+        <div class="eyebrow">代表人材</div>
+        <h2>代表人材プロフィール | 紀 冰楠</h2>
+        <div class="profile-page">
+          <div class="profile-page-top">
+            <div class="profile-hero">
+              <div class="profile-hero-row">
+                <div class="profile-title-wrap">
+                  <div class="profile-avatar">JB</div>
+                  <div class="profile-identity">
+                    <h3>紀 冰楠</h3>
+                    <div class="kana">キ ヒョウナン</div>
+                    <div class="role">AI・データ活用を軸とした DX推進コンサルタント</div>
+                    <div class="highlight-title">AI推進力と英語対応力</div>
+                  </div>
+                </div>
+                <a class="profile-link" href="../04.人材Lib（履歴書）/CV%20紀冰楠%20日本語.html" target="_blank" rel="noopener noreferrer">原稿参照</a>
+              </div>
+              <p class="profile-summary-main"><b>AI導入を業務価値・統制・定着まで接続</b>する実務型メンバー。<b>PwC Japanグループ、日立建機</b>など日本エンタープライズ案件で要件定義から導入・定着化までを推進し、英語でのビジネス対応にも強い。</p>
+            </div>
+            <div class="profile-side">
+              <div class="profile-box">
+                <h4>主要指標</h4>
+                <div class="profile-kpis">
+                  <div class="profile-kpi"><div class="num">8年+</div><div class="cap">AI × DX 実務経験</div></div>
+                  <div class="profile-kpi"><div class="num">5年+</div><div class="cap">日本顧客向けPJ参画</div></div>
+                  <div class="profile-kpi"><div class="num">90%↓</div><div class="cap">AI活用による手入力削減</div></div>
+                  <div class="profile-kpi"><div class="num">流暢</div><div class="cap">英語ビジネス対応</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-columns">
+            <div class="profile-card">
+              <h4>AI・業務実装力</h4>
+              <ul>
+                <li>生成AI、AI-OCR / IDP、非構造化データ処理の設計・実装に対応</li>
+                <li>ServiceNow、Salesforce、業務プロセス設計、要件定義に実績</li>
+                <li>AI上級R&amp;Dエンジニア、ServiceNow / Salesforce 認定を保有</li>
+              </ul>
+            </div>
+            <div class="profile-card">
+              <h4>代表案件</h4>
+              <ul>
+                <li>AI文書処理基盤で、PoCから基幹接続・教育まで一貫担当</li>
+                <li>ServiceNow ITSM日本展開で、申請・承認・権限設計を主導</li>
+                <li>PwC Japan / 日立建機案件で導入定着と改善提案を推進</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-card">
+            <h4>専門領域</h4>
+            <div class="profile-tags-grid">
+              <span>LLM / 生成AI</span><span>AI-OCR / IDP</span><span>非構造化データ処理</span><span>英語ビジネス流暢</span><span>日本語文書対応</span><span>Python / API設計</span><span>ServiceNow</span><span>Salesforce</span><span>要件定義・Fit&amp;Gap</span><span>PoC設計・実行</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Core member profile continuation</span><span class="slide-no">11</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner">
+        <div class="chapter-slide">
+          <div class="chapter-no">04</div>
+          <div class="chapter-copy">
+            <div class="eyebrow">第4部</div>
+            <h1>AI案件実績</h1>
+            <p class="sub">前段の業務理解と会社能力を踏まえ、AI Application、AI Agent、ASC、Embodied AI の4ラインで実績を整理し、何を提供し、何が証拠かを明確にする。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>Section opener</span><span class="slide-no">18</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">案件全体像</div>
+        <h2>AI案件マップ</h2>
+        <p class="sub">案件全体をサービスライン単位で俯瞰し、どの業務価値がどのラインに紐づくかを示す。</p>
+        <div class="matrix">
+          <div class="matrix-head">案件タイプ＼サービスライン</div>
+          <div class="matrix-head">AIアプリケーション</div>
+          <div class="matrix-head">AIエージェント</div>
+          <div class="matrix-head">ASC</div>
+          <div class="matrix-head">フィジカルAI</div>
+          <div class="matrix-head">保険適合</div>
+
+          <div class="matrix-side">ナレッジ</div>
+          <div class="matrix-cell hit">社内PAI / コンプライアンスRAG</div>
+          <div class="matrix-cell hit">保険業務Agent</div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell hit">約款 / 規程 / 査定知識</div>
+
+          <div class="matrix-side">業務フロー</div>
+          <div class="matrix-cell hit">推奨AI / 請求自動化</div>
+          <div class="matrix-cell hit">市場調査マルチAgent</div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell hit">請求受付 / 引受審査</div>
+
+          <div class="matrix-side">文書処理</div>
+          <div class="matrix-cell hit">AI-OCR / 通関 / 物流</div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell hit">保険金文書処理</div>
+
+          <div class="matrix-side">基盤</div>
+          <div class="matrix-cell"></div>
+          <div class="matrix-cell hit">企業Agent基盤</div>
+          <div class="matrix-cell hit">ASC / 保守自動化 / COBOL変革</div>
+          <div class="matrix-cell hit">Robot 二次開発 / 現場実装</div>
+          <div class="matrix-cell hit">閉域 / 運用 / 基盤連携</div>
+        </div>
+        <div class="footer-note"><span>Map before details</span><span class="slide-no">13</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIアプリケーション</div>
+        <h2>ナレッジAI / 業務自動化 / 文書AI</h2>
+        <div class="case-stack">
+          <div class="case-card featured">
+            <div class="case-top"><div><div class="case-type">業務自動化</div><h3>保険会社向け推奨アシスタント</h3></div><span class="case-badge">重点事例</span></div>
+            <p>問い合わせ一次対応と商品推奨を支援し、応答品質の平準化と即時性向上に寄与。</p>
+            <div class="impact"><div class="kpi">85%</div><p>顧客対応自動化率。保険を起点に他部門へ横展開可能。</p></div>
+          </div>
+          <div class="case-card">
+            <div class="case-top"><div><div class="case-type">ナレッジAI</div><h3>社内PAIシステム</h3></div><span class="case-badge">RAG基盤</span></div>
+            <p>文書・表・画像を横断活用するRAG基盤。ベクトル検索、知識グラフ、構造化DBを同時参照する。</p>
+            <div class="impact"><div class="kpi">3-Layer <span class="unit">（IST特許）</span></div><p>文書・表・画像を活用するRAG基盤。統合DB横断検索。</p></div>
+          </div>
+          <div class="case-card">
+            <div class="case-top"><div><div class="case-type">文書AI</div><h3>AI-OCR</h3></div><span class="case-badge">帳票処理</span></div>
+            <p>手書き文書の高精度認識に強く、保険・医療文書処理との親和性が高い。</p>
+            <div class="impact"><div class="kpi">95%+</div><p>手書き読取精度。請求関連文書処理の高度化に適用可能。</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Application evidence</span><span class="slide-no">14</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">GIFデモ</div>
+        <h2>保険会社向け推奨アシスタント | 動作イメージ</h2>
+        <p class="sub">ここに GIF 動画を配置し、問い合わせ対応と商品推奨の利用イメージを視覚的に提示する。</p>
+        <div class="gif-placeholder ratio-a">
+          <div class="gif-placeholder-inner">
+            <h3>GIF 挿入エリア</h3>
+            <p>推奨アシスタントの画面遷移、回答生成、商品提案フローを表示する想定。<br>`media/a.gif` の比率に合わせて差し替え可能な余白を確保している。</p>
+            <span class="hint">後から GIF を差し替え</span>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Application demo</span><span class="slide-no">15</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIアプリ追加事例</div>
+        <h2>AI Application の実例</h2>
+        <div class="grid-3">
+          <div class="card featured"><div class="label">業務自動化</div><h3>保険請求処理 自動化Agent</h3><p>領収書、診断書認識、データ抽出、フォーム自動入力を API / RPA で基幹連携する。</p></div>
+          <div class="card"><div class="label">ナレッジAI</div><h3>コンプライアンス文書RAG検索</h3><p>規制文書、内部規程、監査報告書を自然言語で検索し、出典明示と追跡可能性を担保する。</p></div>
+          <div class="card"><div class="label">ナレッジAI</div><h3>投資アドバイザリー ナレッジAI</h3><p>調査レポート、目論見書、市場データを活用し、助言支援と説明責任付き回答を実現する。</p></div>
+          <div class="card"><div class="label">音声AI</div><h3>音声認識 / 議事録作成 / CRM自動登録</h3><p>会議記録、議事録生成、通話要約、CRM連携までを自動化し、後処理工数を 70%以上削減する。</p></div>
+          <div class="card"><div class="label">文書AI</div><h3>通関企業向け AI通関システム</h3><p>通関書類の識別、振り分け、申告までを自動化し、業務フロー単位で価値を出している。</p></div>
+          <div class="card"><div class="label">業務運用AI</div><h3>物流企業向け AIプラットフォーム</h3><p>OCR + RPA による物流業務最適化。識別、照合、追跡、申告を一体で処理する。</p></div>
+        </div>
+        <div class="footer-note"><span>AI Application extended cases</span><span class="slide-no">15</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">横展開追加事例</div>
+        <h2>横展開領域の追加実例</h2>
+        <div class="grid-3">
+          <div class="card featured"><div class="label">保険AI</div><h3>保険DX関連AI実績</h3><p>保険領域でのAI導入知見を横展開し、財務・監査・帳票処理の具体例へ接続できる。</p></div>
+          <div class="card"><div class="label">教育AI</div><h3>高校学習成果チェックアシスタント</h3><p>学習成果の判定、コメント生成、評価・フィードバックを自動化する。</p></div>
+          <div class="card"><div class="label">画像AI</div><h3>工場安全措置検査アシスタント</h3><p>画像認識により安全装備・手順逸脱を検知し、人件費約10%削減に寄与。</p></div>
+          <div class="card"><div class="label">財務AI</div><h3>財務対話AI</h3><p>財務対話、ナレッジ検索、説明責任付き応答を支援する金融向けAI資産。</p></div>
+          <div class="card"><div class="label">監査AI</div><h3>監査AI</h3><p>監査・内容審査を高度化し、文書確認とレビュー負荷を削減する。</p></div>
+          <div class="card"><div class="label">文書AI</div><h3>AI-OCR</h3><p>保険・医療文書処理との親和性が高い帳票AI資産として再掲できる。</p></div>
+        </div>
+        <div class="footer-note"><span>AI Application breadth</span><span class="slide-no">16</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント</div>
+        <h2>判断・収集・生成を担う業務エージェント</h2>
+        <div class="case-stack">
+          <div class="case-card featured">
+            <div class="case-top"><div><div class="case-type">保険エージェント</div><h3>保険業務Agent</h3></div><span class="case-badge">保険特化</span></div>
+            <p>保険契約、約款、査定マニュアル等を知識ソースとし、保険金支払・引受審査・請求受付を高度化する。</p>
+            <div class="impact compact-impact"><div class="kpi">ハイブリッド構成</div><p>LLM + RAG + ルールベースで説明可能性を重視。</p></div>
+          </div>
+          <div class="case-card">
+            <div class="case-top"><div><div class="case-type">調査マルチAgent</div><h3>金融市場調査 マルチAgent</h3></div><span class="case-badge">経営支援</span></div>
+            <p>市場データ、競合情報、規制動向を複数Agentが自律収集し、アナリスト向けレポートを自動生成。</p>
+            <div class="impact compact-impact"><div class="kpi">60分→5分</div><p>市場調査レポート作成の初動時間を約55分短縮。</p></div>
+          </div>
+          <div class="case-card">
+            <div class="case-top"><div><div class="case-type">基盤</div><h3>企業向けAgent基盤</h3></div><span class="case-badge">横展開</span></div>
+            <p>不動産、自動車、各種業務特化Agent支援まで含め、単発機能ではなく業務フロー単位で設計する。</p>
+            <div class="impact compact-impact"><div class="kpi">単体〜全社</div><p>単一用途Agentから部門横断Multi-Agent基盤まで拡張可能。</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent evidence</span><span class="slide-no">17</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">GIFデモ</div>
+        <h2>保険業務Agent | 動作イメージ</h2>
+        <p class="sub">ここに GIF 動画を配置し、保険業務Agent の照会、判断支援、説明生成の流れを視覚的に補足する。</p>
+        <div class="gif-placeholder ratio-b">
+          <div class="gif-placeholder-inner">
+            <h3>GIF 挿入エリア</h3>
+            <p>約款参照、査定支援、請求受付などの操作イメージを表示する想定。<br>`media/图片 1.gif` の比率に合わせて単一ビジュアル中心の余白を確保している。</p>
+            <span class="hint">後から GIF を差し替え</span>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent demo</span><span class="slide-no">19</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>大手不動産マルチAgent</h2>
+        <p class="sub"><span class="tag">不動産</span> <span class="tag">業務統合基盤</span> <span class="tag">マルチAgent</span> 不動産企業内に分散する顧客・物件・会議・部門情報を横断接続し、営業判断、案件推進、情報共有を一つの業務体験に統合した企業向けAIソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>散在データを意思決定に使える形へ再編</h3>
+            <p>不動産業務では、顧客情報、物件情報、会議記録、部門ナレッジが個別に蓄積されやすく、営業判断と案件推進のスピードを阻害しやすい。本案件では、社内外に分散する情報を横断的に統合し、検索、要約、タスク化までを複数Agentで分担することで、現場で使える意思決定基盤へ転換した。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>社内外に分散した情報源を一つの業務体験へ統合</li>
+              <li>会議、顧客、物件、部門情報を同時に参照可能</li>
+              <li>用途別に Agent を切り替え、調査から実行までを支援</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">接続資産</div>
+            <h3>既存システムと業務データをそのまま活用</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">ERP On-Prem</span>
+              <span class="tag">CRM</span>
+              <span class="tag">Salesforce</span>
+              <span class="tag">SharePoint</span>
+            </div>
+            <ul class="bullet-list">
+              <li>ドキュメント: Word、Excel、PDF、PPT、画像、音声、動画</li>
+              <li>会議情報: 録音、記録、要約、タスク</li>
+              <li>不動産情報: 物件情報、新規案件、相談ドキュメント</li>
+              <li>営業情報: 顧客情報、新規顧客、商談履歴</li>
+              <li>組織情報: 各部門ナレッジ、共有情報、RAG資産</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>案件推進の高速化</h3>
+            <p>会議録音・会議内容から議事録、要約、タスクを自動生成し、案件推進の初動を速める。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>営業判断の高度化</h3>
+            <p>顧客情報、物件情報、商談履歴を横断検索し、担当者の情報収集負荷を下げながら判断品質を高める。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>拡張可能な運用基盤</h3>
+            <p>単一ユースケースに閉じず、業務別 Agent を追加しながら現場運用へ段階的に拡張できる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">18</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>自動車メーカー Agent+RAG 基盤</h2>
+        <p class="sub"><span class="tag">自動車</span> <span class="tag">知識活用基盤</span> <span class="tag">分析高度化</span> <span class="tag">Agent + RAG + ChatBI</span> 戦略立案、知識検索、分析照会を単一基盤へ統合し、情報収集から意思決定までを高速化した自動車業界向けAIソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>知識・分析・業務支援が分断された状態を解消</h3>
+            <p>自動車企業では、戦略検討に必要な知識資産、部門文書、分析データが分散しやすく、情報収集と判断に時間を要しやすい。本案件では、Agent、RAG、ChatBI を単一基盤に統合し、知識検索から分析照会、レポート活用までを一つの業務導線で利用できる構成へ再設計した。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>戦略立案、知識検索、分析照会を単一基盤で利用可能</li>
+              <li>自然言語から必要情報へ到達できる導線を整備</li>
+              <li>業務支援Agentを企業標準機能として提供</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">接続資産</div>
+            <h3>文書・ID・権限を既存システムと統合</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">SharePoint</span>
+              <span class="tag">OneDrive</span>
+              <span class="tag">CloudIDP</span>
+              <span class="tag">API Gateway</span>
+            </div>
+            <ul class="bullet-list">
+              <li>文書同期: SharePoint、OneDrive、BI Folder、KB Folder</li>
+              <li>認証基盤: CloudIDP による統一ログインと権限同期</li>
+              <li>知識空間: Knowledge Space、MySpace、Shared Space</li>
+              <li>運用基盤: Agent Store、Agent Card、Agent Garage</li>
+              <li>分析基盤: Excel2BI、ChatBI API、NL2SQL framework</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>知識活用の定着</h3>
+            <p>社内文書を継続的に同期し、必要な知識へ迅速に到達できる検索体験を実現する。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>業務別 Agent の提供</h3>
+            <p>用途別 Agent を選択可能とし、戦略検討、知識参照、業務支援を現場で使い分けられる。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>分析高度化</h3>
+            <p>ChatBI と NL2SQL により、非技術ユーザーでも自然言語ベースで分析照会とデータ活用を進められる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">19</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>市場調査Agent</h2>
+        <p class="sub"><span class="tag">市場調査</span> <span class="tag">情報収集高度化</span> <span class="tag">要約・構造化</span> 市場情報の収集、要約、構造化を自動化し、製品開発と事業判断に必要なインサイトを迅速に提供する調査支援ソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>市場調査を意思決定に直結する形へ転換</h3>
+            <p>市場調査業務では、外部情報の収集、要約、比較、社内共有に時間を要し、経営判断や製品企画への接続が遅れやすい。本案件では、AI により市場情報の自動収集、要約、構造化を行い、調査結果を再利用可能なナレッジ資産へ変換することで、判断スピードと分析品質を同時に高めた。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>市場情報の収集、要約、構造化を一連で自動化</li>
+              <li>調査結果を社内ナレッジとして蓄積し継続活用</li>
+              <li>製品開発の方向性把握を迅速化</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">導入基盤</div>
+            <h3>Microsoft 基盤上で迅速に実装</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">Power Platform</span>
+              <span class="tag">AI Foundry</span>
+              <span class="tag">ナレッジ蓄積</span>
+              <span class="tag">再利用性</span>
+            </div>
+            <ul class="bullet-list">
+              <li>業務特化型 Agent を迅速に構築できる Microsoft 基盤</li>
+              <li>収集結果を要約・構造化して社内で共有可能</li>
+              <li>継続運用を前提としたナレッジ蓄積型の設計</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>市場調査の自動化</h3>
+            <p>人手で行っていた調査初動を Agent が代替し、情報収集の速度を上げる。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>要約・構造化</h3>
+            <p>調査結果をそのまま貯めるのではなく、判断に使いやすい形へ整理する。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>方向性判断の支援</h3>
+            <p>製品開発の方向性を即座に把握し、競争力強化につながる意思決定を支援する。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">22</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>営業・企画支援Agent</h2>
+        <p class="sub"><span class="tag">営業支援</span> <span class="tag">企画支援</span> <span class="tag">レポート生成</span> 分析結果と社内業務データを接続し、企画立案、フロント業務支援、レポート生成までを一体で支える業務支援ソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>分析結果を営業・企画実務へ接続</h3>
+            <p>多くの企業では、分析結果がレポートに留まり、営業現場や企画判断に十分接続されない。本案件では、業務オペレーションの効率化、FO / SRM データを活用した意思決定高度化、ナレッジ統合を一体化し、分析結果をそのまま実務アクションへつなげる運用モデルを構築した。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>照会、分析、レポート生成を一連の業務として統合</li>
+              <li>FO / SRM データを活用し意思決定を高度化</li>
+              <li>フロント業務支援へ直接つながる活用導線を整備</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">導入基盤</div>
+            <h3>Copilot Studio × Dynamics 365 による業務接続型設計</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">Copilot Studio</span>
+              <span class="tag">Dynamics 365</span>
+              <span class="tag">Power Platform</span>
+              <span class="tag">業務接続</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Copilot Studio / Power Platform による迅速な開発</li>
+              <li>Dynamics 365 データを活用した業務特化型設計</li>
+              <li>ナレッジ検索、照会、レポート生成までを実務導線へ接続</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>営業支援</h3>
+            <p>在庫、発注、仕入先照会などのフロント業務を支援し、現場対応の速度と精度を高める。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>企画判断の高度化</h3>
+            <p>分析結果と社内データを組み合わせ、企画部門が判断材料を迅速に整理できるようにする。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>レポート生成</h3>
+            <p>分析結果をレポートとして自動生成し、部門内共有と説明負荷を下げる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">23</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">AIエージェント追加事例</div>
+        <h2>通関業務自動化Agent</h2>
+        <p class="sub"><span class="tag">通関</span> <span class="tag">業務自動化</span> <span class="tag">OCR</span> 通関メール処理から伝票データ化、HSコード判定、NACCS形式出力までを一気通貫で自動化し、処理速度と精度を引き上げる通関業務向けソリューション。</p>
+        <div class="split">
+          <div class="panel">
+            <div class="label">課題認識</div>
+            <h3>通関処理の一連業務を自動化</h3>
+            <p>通関業務では、メール受付、書類確認、コード判定、システム入力が分断されやすく、繁忙期には処理遅延とミスが発生しやすい。本案件では、AI と OCR を活用し、通関メールの自動振り分けから書類データ化、HSコード判定、NACCS形式出力までを一気通貫で自動化し、実務処理の安定性を高めた。</p>
+            <ul class="bullet-list" style="margin-top:16px">
+              <li>通関メールの自動振り分け</li>
+              <li>書類のデータ化と HS コード自動判定</li>
+              <li>NACCS 形式への出力まで一気通貫で自動化</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">導入基盤</div>
+            <h3>繁閑差の大きい業務でも速度と精度を維持</h3>
+            <div class="tag-row" style="margin-bottom:14px">
+              <span class="tag">AI</span>
+              <span class="tag">OCR</span>
+              <span class="tag">HSコード判定</span>
+              <span class="tag">NACCS</span>
+            </div>
+            <ul class="bullet-list">
+              <li>急増する業務量にも柔軟に対応可能</li>
+              <li>人手処理の負荷とミス発生余地を削減</li>
+              <li>通関処理の速度と精度を大幅に向上</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提供価値 01</div>
+            <h3>メール仕分け</h3>
+            <p>受信した通関関連メールを自動で判別し、後続処理へつなぐ。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 02</div>
+            <h3>書類データ化</h3>
+            <p>OCR と AI により伝票・書類を処理可能なデータへ変換する。</p>
+          </div>
+          <div class="card">
+            <div class="label">提供価値 03</div>
+            <h3>判定と出力</h3>
+            <p>HS コード判定から NACCS 形式出力までを自動化し、実務へ直結させる。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI Agent case detail</span><span class="slide-no">24</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">ASC</div>
+        <h2>AI駆動開発とモダナイゼーション</h2>
+        <div class="split">
+          <div class="panel">
+            <div class="label">ASC保守サービス</div>
+            <h3>AIコパイロットではなく AI駆動開発</h3>
+            <ul class="bullet-list">
+              <li>AI Agent がコード修正からテスト・デプロイまで自律実行</li>
+              <li>知識・文脈 / AI Agent選定 / CI/CD自動化 の3レイヤー構成</li>
+              <li>設計書回復、影響分析、保守改善へ展開可能</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">効果と拡張性</div>
+            <h3>保守高度化からレガシー変革へ</h3>
+            <div class="metric-row" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:8px">
+              <div class="metric-card"><div class="metric-title">Debug</div><div class="metric-num">85%</div><div class="metric-copy">デバッグ工数削減</div></div>
+              <div class="metric-card"><div class="metric-title">Lead Time</div><div class="metric-num">40-50%</div><div class="metric-copy">開発リードタイム短縮</div></div>
+            </div>
+            <ul class="bullet-list" style="margin-top:18px">
+              <li>COBOL資産の理解、改修、変換、テストをAIで支援</li>
+              <li>Java / Python へのオープン化提案まで視野に入る</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-note"><span>ASC evidence</span><span class="slide-no">19</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">フィジカルAI</div>
+        <h2>AI Robot事業</h2>
+        <div class="split-even">
+          <div class="panel">
+            <div class="label">提供内容</div>
+            <h3>ロボット基盤上での二次開発</h3>
+            <ul class="bullet-list">
+              <li>ロボットプラットフォーム上での二次開発・日本向けAI実装</li>
+              <li>技術商社として中国最先端ロボットを日本市場へ導入</li>
+              <li>日本市場の要件に合わせた仕様化</li>
+              <li>業務シナリオに応じたAI機能の追加実装</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="label">位置づけ</div>
+            <h3>物理ワークフローへのAI拡張</h3>
+            <ul class="bullet-list">
+              <li>ロボットを単体製品でなく、業務ソリューションの中に組み込む</li>
+              <li>デジタル空間から物理空間へAIソリューションを拡張できる</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-note"><span>Embodied AI evidence</span><span class="slide-no">20</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="4">
+      <div class="inner top">
+        <div class="eyebrow">ロボット提携企業</div>
+        <h2>主要ロボット企業の日本展開シーン</h2>
+        <p class="sub">IST はロボットを単体販売するのではなく、日本向けAI実装、業務統合、現場導入、運用まで含めて提供する。下記 3 社は、IST が日本市場で展開可能な主要パートナーである。</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="label">提携先 01</div>
+            <h3>LimX Dynamics</h3>
+            <div class="info-block">
+              <div class="info-row">
+                <div class="info-key">会社概要</div>
+                <div class="info-val">科研・導覧・PoC に強く、大学・研究機関で導入実績を持つ双足ロボット企業。</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">主力製品</div>
+                <div class="info-val">TRON1 / TRON2 / LimX Oli</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key">強み</div>
+                <div class="info-val">開放 SDK、Sim2Real、低遅延遥操作、科研導入実績</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">日本展開シーン</div>
+                <div class="info-val">大学・高専の研究平台、博物館・企業展示導覧、製造現場のデータ収集 PoC</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="label">提携先 02</div>
+            <h3>AI² Robotics</h3>
+            <div class="info-block">
+              <div class="info-row">
+                <div class="info-key">会社概要</div>
+                <div class="info-val">具身大モデルを核に、商業・工業領域で量産と商用化を進める汎用知能ロボット企業。</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">主力製品</div>
+                <div class="info-val">AlphaBot 2 / 智魔方 / Alpha Brain</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key">強み</div>
+                <div class="info-val">全域全身 VLA、零样本学習、端側推理、量産実績</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">日本展開シーン</div>
+                <div class="info-val">商業施設・ホテル・金融フロント、半導体・自動車・バイオ領域の業務 PoC・本番導入</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="label">提携先 03</div>
+            <h3>UBTECH</h3>
+            <div class="info-block">
+              <div class="info-row">
+                <div class="info-key">会社概要</div>
+                <div class="info-val">上場企業としての信用力を持ち、工業・康養・教育に広く展開する総合人形ロボット企業。</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">主力製品</div>
+                <div class="info-val">Walker S1 / Walker X / 商用サービスロボット / UGOT</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key">強み</div>
+                <div class="info-val">上場企業の信用力、2,450+ 特許、工場実訓、康養・教育展開</div>
+              </div>
+              <div class="info-row">
+                <div class="info-key alt">日本展開シーン</div>
+                <div class="info-val">製造業 PoC、介護・康養施設、STEM 教育、商業施設での迎賓・案内・巡回</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="label">IST の役割</div>
+          <h3>ロボット販売ではなく、日本市場向け実装・統合・運用を担う</h3>
+          <ul class="bullet-list">
+            <li>日語 AI 実装、LLM / Agent 連携、画面・業務フローの日本向け最適化</li>
+            <li>MES / ERP / CRM / 施設システムとの統合、PoC 設計、現場導入支援</li>
+            <li>法規対応、施工、運用保守まで含めた日本市場での実装責任を担える</li>
+          </ul>
+        </div>
+        <div class="footer-note"><span>Robot partner ecosystem</span><span class="slide-no">21</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="5">
+      <div class="inner top">
+        <div class="eyebrow">提供価値</div>
+        <h2>ISTが提供できること</h2>
+        <div class="compare">
+          <div class="compare-box bad">
+            <h3>一般的なAIベンダー</h3>
+            <ul>
+              <li>技術説明が中心になりやすい</li>
+              <li>業務理解が限定的</li>
+              <li>実験止まりで運用まで届きにくい</li>
+              <li>既存資産やレガシー課題の扱いが弱い</li>
+            </ul>
+          </div>
+          <div class="arrow-box">→</div>
+          <div class="compare-box good">
+            <h3>IST</h3>
+            <div class="adv-strip">
+              <div class="adv-pill"><b>20年</b><span>日本市場での信頼基盤</span></div>
+              <div class="adv-pill"><b>4領域</b><span>AI Application / Agent / ASC / Robot</span></div>
+              <div class="adv-pill"><b>保険深耕</b><span>保険業務理解を前提にAI適用を設計</span></div>
+            </div>
+            <ul>
+              <li>AI Application を業務実装まで落とし込み、成果が出る形まで支援できる</li>
+              <li>Agent / RAG / OCR / ASC / Robot を横断し、最適な構成で提案できる</li>
+              <li>保険・金融の業務理解を前提に、AI適用対象と優先順位をコンサルできる</li>
+              <li>日本市場での信頼基盤、日中ブリッジ実行力、保険深耕の業務理解を一体で持つ</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-note"><span>AI-first close</span><span class="slide-no">25</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-chapter="5">
+      <div class="inner">
+        <div class="chapter-slide" style="justify-content:center">
+          <div class="chapter-copy" style="max-width:860px;text-align:center">
+            <div class="eyebrow" style="justify-content:center">結び</div>
+            <h1>ご清聴ありがとうございました</h1>
+            <p class="sub">本資料が、貴社におけるAI活用構想の具体化に向けた議論の起点となれば幸いです。<br>InnoSysTech株式会社は、業務理解を起点に実装まで伴走します。</p>
+          </div>
+        </div>
+        <div class="footer-note"><span>Thank you</span><span class="slide-no">28</span></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+const counter = document.getElementById('counter');
+const progress = document.getElementById('progress');
+const chapterBtns = Array.from(document.querySelectorAll('.chapter-btn'));
+let cur = 0;
+
+function hashToIndex(){
+  const raw = (location.hash || '').replace('#','').trim();
+  const idx = Number(raw);
+  if(Number.isInteger(idx) && idx >= 1 && idx <= slides.length) return idx - 1;
+  return null;
+}
+
+function applySlideState(next){
+  slides.forEach((slide, index) => {
+    slide.classList.toggle('active', index === next);
+    slide.classList.remove('out');
+  });
+  cur = next;
+  counter.textContent = `${cur + 1} / ${slides.length}`;
+  progress.style.width = `${((cur + 1) / slides.length) * 100}%`;
+  updateChapter(cur);
+}
+
+function updateChapter(idx){
+  const chap = slides[idx].dataset.chapter;
+  const activeJumpMap = {
+    "0":"0",
+    "1":"3",
+    "2":"7",
+    "3":"11",
+    "4":"19",
+    "5":"30"
+  };
+  chapterBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.jump === activeJumpMap[chap]));
+}
+
+function showSlide(next){
+  if(next < 0 || next >= slides.length || next === cur) return;
+  const prev = cur;
+  slides[prev].classList.remove('active');
+  slides[prev].classList.add('out');
+  cur = next;
+  slides[cur].classList.add('active');
+  setTimeout(() => slides[prev].classList.remove('out'), 520);
+  counter.textContent = `${cur + 1} / ${slides.length}`;
+  progress.style.width = `${((cur + 1) / slides.length) * 100}%`;
+  updateChapter(cur);
+  if(location.hash !== `#${cur + 1}`){
+    history.replaceState(null, '', `#${cur + 1}`);
+  }
+}
+
+function go(dir){
+  const next = cur + dir;
+  if(next < 0 || next >= slides.length) return;
+  showSlide(next);
+}
+
+chapterBtns.forEach(btn => btn.addEventListener('click', () => showSlide(Number(btn.dataset.jump))));
+
+window.addEventListener('hashchange', () => {
+  const idx = hashToIndex();
+  if(idx != null && idx !== cur) applySlideState(idx);
+});
+
+document.addEventListener('keydown', e => {
+  if(["ArrowRight","ArrowDown"," "].includes(e.key)){ e.preventDefault(); go(1); }
+  if(["ArrowLeft","ArrowUp","Backspace"].includes(e.key)){ e.preventDefault(); go(-1); }
+  if(e.key.toLowerCase() === "f"){ document.getElementById('fsBtn').click(); }
+});
+
+document.getElementById('fsBtn').addEventListener('click', async () => {
+  if(!document.fullscreenElement){
+    await document.documentElement.requestFullscreen?.();
+  }else{
+    await document.exitFullscreen?.();
+  }
+});
+
+let touchX = null;
+let touchY = null;
+
+document.addEventListener('touchstart', e => {
+  const t = e.changedTouches[0];
+  touchX = t.clientX;
+  touchY = t.clientY;
+}, {passive:true});
+
+document.addEventListener('touchend', e => {
+  if(touchX == null || touchY == null) return;
+  const t = e.changedTouches[0];
+  const dx = t.clientX - touchX;
+  const dy = t.clientY - touchY;
+  const isMobile = window.matchMedia('(max-width: 640px)').matches;
+
+  if(isMobile){
+    const activeInner = slides[cur]?.querySelector('.inner');
+    const currentScrollTop = activeInner ? activeInner.scrollTop : 0;
+    const currentScrollMax = activeInner ? (activeInner.scrollHeight - activeInner.clientHeight) : 0;
+    if(Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 48){
+      if(dy < 0 && currentScrollTop >= currentScrollMax - 4) go(1);
+      if(dy > 0 && currentScrollTop <= 4) go(-1);
+    }
+  }else{
+    if(Math.abs(dx) > 40){ dx < 0 ? go(1) : go(-1); }
+  }
+
+  touchX = null;
+  touchY = null;
+}, {passive:true});
+
+counter.textContent = `1 / ${slides.length}`;
+progress.style.width = `${(1 / slides.length) * 100}%`;
+slides.forEach((slide, index) => {
+  const no = slide.querySelector('.slide-no');
+  if(no) no.textContent = String(index + 1).padStart(2, '0');
+});
+const initialIdx = hashToIndex();
+if(initialIdx != null){
+  applySlideState(initialIdx);
+}else{
+  applySlideState(0);
+}
+</script>
+</body>
+</html>
