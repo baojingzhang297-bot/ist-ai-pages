@@ -347,6 +347,20 @@ h1,h2,h3{text-wrap:balance}
   margin-left:auto;
   margin-right:auto;
 }
+.gif-placeholder.media-stage{
+  padding:0;
+  overflow:hidden;
+  border-style:solid;
+}
+.gif-placeholder.media-stage img,
+.gif-placeholder.media-stage iframe{
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+  object-fit:contain;
+  background:#fff;
+}
 .gif-placeholder-inner{max-width:640px}
 .gif-placeholder h3{margin-bottom:10px}
 .gif-placeholder p{color:var(--text-muted);line-height:1.7}
@@ -1126,13 +1140,7 @@ h1,h2,h3{text-wrap:balance}
         <p class="sub">北京大学の研究成果を製品・サービス体系として整理した「第三世代ソフトウェア工場」を、ISTが日本企業向けに実装・導入できる形へ接続する。</p>
         <div class="pku-collab">
           <div class="pku-visual">
-            <div class="pku-image-slot">
-              <div class="slot-inner">
-                <b>実際製品画像 挿入エリア</b>
-                <span>北京大学との協業プロダクト画像をここに配置</span>
-                <small>現在の表示領域: 340px 高 / 横幅可変</small>
-              </div>
-            </div>
+            <img src="img/p28.png" alt="北京大学との協業プロダクト画面">
             <div class="pku-caption">北京大学資料に含まれる実際の製品画面。単なる研究紹介ではなく、製品・交付モデルとして整理済みであることを示している。</div>
           </div>
           <div class="pku-side">
@@ -1511,12 +1519,8 @@ h1,h2,h3{text-wrap:balance}
         <div class="eyebrow">GIFデモ</div>
         <h2>保険会社向け推奨アシスタント | 動作イメージ</h2>
         <p class="sub">ここに GIF 動画を配置し、問い合わせ対応と商品推奨の利用イメージを視覚的に提示する。</p>
-        <div class="gif-placeholder ratio-a">
-          <div class="gif-placeholder-inner">
-            <h3>GIF 挿入エリア</h3>
-            <p>推奨アシスタントの画面遷移、回答生成、商品提案フローを表示する想定。<br>`media/a.gif` の比率に合わせて差し替え可能な余白を確保している。</p>
-            <span class="hint">後から GIF を差し替え</span>
-          </div>
+        <div class="gif-placeholder ratio-a media-stage">
+          <img src="img/P15.gif" alt="保険会社向け推奨アシスタントの動作イメージ">
         </div>
         <div class="footer-note"><span>AI Application demo</span><span class="slide-no">15</span></div>
       </div>
@@ -1584,12 +1588,8 @@ h1,h2,h3{text-wrap:balance}
         <div class="eyebrow">GIFデモ</div>
         <h2>保険業務Agent | 動作イメージ</h2>
         <p class="sub">ここに GIF 動画を配置し、保険業務Agent の照会、判断支援、説明生成の流れを視覚的に補足する。</p>
-        <div class="gif-placeholder ratio-b">
-          <div class="gif-placeholder-inner">
-            <h3>GIF 挿入エリア</h3>
-            <p>約款参照、査定支援、請求受付などの操作イメージを表示する想定。<br>`media/图片 1.gif` の比率に合わせて単一ビジュアル中心の余白を確保している。</p>
-            <span class="hint">後から GIF を差し替え</span>
-          </div>
+        <div class="gif-placeholder ratio-b media-stage">
+          <img src="img/P27.gif" alt="保険業務Agent の動作イメージ">
         </div>
         <div class="footer-note"><span>AI Agent demo</span><span class="slide-no">19</span></div>
       </div>
